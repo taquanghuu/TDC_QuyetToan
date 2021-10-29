@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet_TDC" targetNamespace="http://tempuri.org/DataSet_TDC.xsd" xmlns:mstns="http://tempuri.org/DataSet_TDC.xsd" xmlns="http://tempuri.org/DataSet_TDC.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet_TDC" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet_TDC" msprop:Generator_UserDSName="DataSet_TDC">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tbBangKeHoaDon" msprop:Generator_TableClassName="tbBangKeHoaDonDataTable" msprop:Generator_TableVarName="tabletbBangKeHoaDon" msprop:Generator_TablePropName="tbBangKeHoaDon" msprop:Generator_RowDeletingName="tbBangKeHoaDonRowDeleting" msprop:Generator_RowChangingName="tbBangKeHoaDonRowChanging" msprop:Generator_RowEvHandlerName="tbBangKeHoaDonRowChangeEventHandler" msprop:Generator_RowDeletedName="tbBangKeHoaDonRowDeleted" msprop:Generator_UserTableName="tbBangKeHoaDon" msprop:Generator_RowChangedName="tbBangKeHoaDonRowChanged" msprop:Generator_RowEvArgName="tbBangKeHoaDonRowChangeEvent" msprop:Generator_RowClassName="tbBangKeHoaDonRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="STT" msprop:Generator_ColumnVarNameInTable="columnSTT" msprop:Generator_ColumnPropNameInRow="STT" msprop:Generator_ColumnPropNameInTable="STTColumn" msprop:Generator_UserColumnName="STT" type="xs:string" minOccurs="0" />
+              <xs:element name="sohoadon" msprop:Generator_ColumnVarNameInTable="columnsohoadon" msprop:Generator_ColumnPropNameInRow="sohoadon" msprop:Generator_ColumnPropNameInTable="sohoadonColumn" msprop:Generator_UserColumnName="sohoadon" type="xs:string" minOccurs="0" />
+              <xs:element name="ngayhoadon" msprop:Generator_ColumnVarNameInTable="columnngayhoadon" msprop:Generator_ColumnPropNameInRow="ngayhoadon" msprop:Generator_ColumnPropNameInTable="ngayhoadonColumn" msprop:Generator_UserColumnName="ngayhoadon" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="diengiai" msprop:Generator_ColumnVarNameInTable="columndiengiai" msprop:Generator_ColumnPropNameInRow="diengiai" msprop:Generator_ColumnPropNameInTable="diengiaiColumn" msprop:Generator_UserColumnName="diengiai" type="xs:string" minOccurs="0" />
+              <xs:element name="sotien" msprop:Generator_ColumnVarNameInTable="columnsotien" msprop:Generator_ColumnPropNameInRow="sotien" msprop:Generator_ColumnPropNameInTable="sotienColumn" msprop:Generator_UserColumnName="sotien" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
