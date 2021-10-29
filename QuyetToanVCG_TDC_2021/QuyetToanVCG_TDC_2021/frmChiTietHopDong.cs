@@ -283,5 +283,10 @@ namespace QuyetToanVCG_TDC_2021
         {
             gridView_BangKe.SetFocusedRowCellValue(clDanhSachCapTien, false);
         }
+
+        private void gridView_NgayThang_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
+        {
+            gridView_NgayThang.SetFocusedRowCellValue(clCheck_In_An, true);
+        }
     }
 }
