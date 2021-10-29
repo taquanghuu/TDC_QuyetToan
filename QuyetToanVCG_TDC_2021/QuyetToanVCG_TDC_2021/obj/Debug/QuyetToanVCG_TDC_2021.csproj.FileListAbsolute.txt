@@ -578,3 +578,4 @@ H:\2021\2. TDc\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021
 H:\2021\2. TDc\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\obj\Debug\QuyetToanVCG_TDC_2021.csproj.GenerateResource.Cache
 H:\2021\2. TDc\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\obj\Debug\QuyetToanVCG_TDC_2021.exe.licenses
 H:\2021\2. TDc\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\obj\Debug\QuyetToanVCG_TDC_2021._6_PhuLucKeHoachHoiThao_1.resources
+H:\2021\2. TDc\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\obj\Debug\QuyetToanVCG_TDC_2021._7_DanhSachBoiDuong_HoiThao_1.resources

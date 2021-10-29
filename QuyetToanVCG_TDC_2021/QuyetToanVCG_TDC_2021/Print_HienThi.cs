@@ -126,9 +126,6 @@ namespace QuyetToanVCG_TDC_2021
         private void _7_DanhSachBoiDuong_HoiThao_1()
         {
            
-           
-
-          
             clsDaTa cls = new clsDaTa();
             DataTable dt3 = cls.tbHoiThao_SA_ID_HD(mid_hopdong);
             double xtongtien__ = Convert.ToDouble(dt3.Compute("SUM(dinhmucsotien)", string.Empty));
@@ -143,10 +140,11 @@ namespace QuyetToanVCG_TDC_2021
                 DataRow _ravi = ds.tbHoiThao.NewRow();
                 _ravi["STT"] = (i + 1).ToString();
                 _ravi["HoTen"] = dt3.Rows[i]["hoten_phuluchoithao"].ToString();
-                if (dt3.Rows[i]["tenchucvu"].ToString() == "Trợ lý KHQS")
-                    _ravi["ChucVu"] = "Trợ lý KHQS";
-                else _ravi["ChucVu"] = dt3.Rows[i]["chucvu_phuluchoithao"].ToString();
-                _ravi["CuongVi"] = dt3.Rows[i]["tenchucdanh"].ToString();
+                //if (dt3.Rows[i]["tenchucvu"].ToString() == "Trợ lý KHQS")
+                //    _ravi["ChucVu"] = "Trợ lý KHQS -";
+                //else _ravi["ChucVu"] = dt3.Rows[i]["chucvu_danhsachcaptien"].ToString();
+                _ravi["ChucVu"] = dt3.Rows[i]["chucvu_danhsachcaptien"].ToString();
+                _ravi["DinhMuc"] =Convert.ToDouble(dt3.Rows[i]["dinhmucsotien"].ToString());
                 ds.tbHoiThao.Rows.Add(_ravi);
             }
             xtr111.DataSource = null;
@@ -163,6 +161,7 @@ namespace QuyetToanVCG_TDC_2021
             else if (mi_id_STT == 2) _2_GiayThanhToanTamUng();
             else if (mi_id_STT == 5) _5_KeHoach_hoiThao_1();
             else if (mi_id_STT == 6) _6_PhuLuc_KeHoach_hoiThao_1();
+            else if (mi_id_STT == 7) _7_DanhSachBoiDuong_HoiThao_1();
         }
         private void Print_HienThi_Load(object sender, EventArgs e)
         {

@@ -31,7 +31,7 @@ namespace QuyetToanVCG_TDC_2021
 
             clsSoTienBangChu cls2 = new QuyetToanVCG_TDC_2021.clsSoTienBangChu();
             pTongSoTien.Value = tongsotien_;
-            psotienbangchu.Value = cls2.DocTienBangChu(tongsotien_, " đồng ./.");
+            psotienbangchu.Value = "       Tổng số tiền bằng chữ: "+ cls2.DocTienBangChu(tongsotien_, " đồng ./.") + "";
             pngaythang.Value = "Ngày " + ngaynhantien_.ToString("dd") + " tháng " + ngaynhantien_.ToString("MM") + " năm " + ngaynhantien_.ToString("yyyy") + "";
           
         }
