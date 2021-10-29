@@ -23,9 +23,9 @@ namespace QuyetToanVCG_TDC_2021
         {
             if(gridView1.GetFocusedRowCellValue(clid_ngaythang).ToString()!="")
             {
-               
+               DateTime xngay= Convert.ToDateTime(gridView1.GetFocusedRowCellValue(clngaythang).ToString());
                 int xid = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clid_the_STT).ToString());
-                Print_HienThi ff = new Print_HienThi(xid, mid_hopdong_);
+                Print_HienThi ff = new Print_HienThi(xid, mid_hopdong_, xngay);
                 ff.Show();
             }
            

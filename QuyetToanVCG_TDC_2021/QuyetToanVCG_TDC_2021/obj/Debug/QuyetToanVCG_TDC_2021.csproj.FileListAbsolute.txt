@@ -566,7 +566,6 @@ H:\2021\2. TDc\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021
 H:\2021\2. TDc\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\obj\Debug\QuyetToanVCG_TDC_2021._1_BangKeChungTuChiTieu.resources
 H:\2021\2. TDc\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\obj\Debug\QuyetToanVCG_TDC_2021._2_GiayThanhToanTamUng.resources
 H:\2021\2. TDc\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\obj\Debug\QuyetToanVCG_TDC_2021._5_KeHoachHoiThao_1_ThongQuaQuyTrinh.resources
-H:\2021\2. TDc\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\obj\Debug\QuyetToanVCG_TDC_2021._6_DanhSachBoiDuongTHuLaoHoiThao_1.resources
 H:\2021\2. TDc\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\obj\Debug\QuyetToanVCG_TDC_2021.Form1.resources
 H:\2021\2. TDc\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\obj\Debug\QuyetToanVCG_TDC_2021.frmBaoGia.resources
 H:\2021\2. TDc\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\obj\Debug\QuyetToanVCG_TDC_2021.frmChiTietHopDong.resources
@@ -578,3 +577,4 @@ H:\2021\2. TDc\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021
 H:\2021\2. TDc\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\obj\Debug\QuyetToanVCG_TDC_2021.Properties.Resources.resources
 H:\2021\2. TDc\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\obj\Debug\QuyetToanVCG_TDC_2021.csproj.GenerateResource.Cache
 H:\2021\2. TDc\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\obj\Debug\QuyetToanVCG_TDC_2021.exe.licenses
+H:\2021\2. TDc\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\obj\Debug\QuyetToanVCG_TDC_2021._6_PhuLucKeHoachHoiThao_1.resources

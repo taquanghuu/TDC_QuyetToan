@@ -46,6 +46,7 @@
             this.clid_ngaythang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clCheck_In_An = new DevExpress.XtraGrid.Columns.GridColumn();
             this.clid_the_STT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.clngaythang = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -61,13 +62,18 @@
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btPrint1,
             this.repositoryItemMemoEdit1});
-            this.gridControl1.Size = new System.Drawing.Size(604, 711);
+            this.gridControl1.Size = new System.Drawing.Size(654, 711);
             this.gridControl1.TabIndex = 2;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView1.Appearance.Row.Options.UseTextOptions = true;
             this.gridView1.Appearance.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -78,7 +84,8 @@
             this.clMau2,
             this.clid_ngaythang,
             this.clCheck_In_An,
-            this.clid_the_STT});
+            this.clid_the_STT,
+            this.clngaythang});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -89,8 +96,6 @@
             this.clSTT.Caption = "STT";
             this.clSTT.Name = "clSTT";
             this.clSTT.OptionsColumn.AllowEdit = false;
-            this.clSTT.Visible = true;
-            this.clSTT.VisibleIndex = 0;
             this.clSTT.Width = 40;
             // 
             // cldiengiai
@@ -102,7 +107,7 @@
             this.cldiengiai.OptionsColumn.AllowEdit = false;
             this.cldiengiai.Visible = true;
             this.cldiengiai.VisibleIndex = 1;
-            this.cldiengiai.Width = 506;
+            this.cldiengiai.Width = 470;
             // 
             // repositoryItemMemoEdit1
             // 
@@ -110,14 +115,14 @@
             // 
             // clMau1
             // 
-            this.clMau1.Caption = "Mẫu 1";
+            this.clMau1.Caption = "Mẫu";
             this.clMau1.ColumnEdit = this.btPrint1;
             this.clMau1.Name = "clMau1";
             this.clMau1.OptionsColumn.FixedWidth = true;
             this.clMau1.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.clMau1.Visible = true;
-            this.clMau1.VisibleIndex = 2;
-            this.clMau1.Width = 40;
+            this.clMau1.VisibleIndex = 3;
+            this.clMau1.Width = 50;
             // 
             // btPrint1
             // 
@@ -153,15 +158,33 @@
             // 
             // clid_the_STT
             // 
-            this.clid_the_STT.Caption = "id_the_STT";
+            this.clid_the_STT.AppearanceCell.Options.UseTextOptions = true;
+            this.clid_the_STT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.clid_the_STT.Caption = "STT";
             this.clid_the_STT.FieldName = "id_the_STT";
             this.clid_the_STT.Name = "clid_the_STT";
+            this.clid_the_STT.OptionsColumn.AllowEdit = false;
+            this.clid_the_STT.Visible = true;
+            this.clid_the_STT.VisibleIndex = 0;
+            this.clid_the_STT.Width = 44;
+            // 
+            // clngaythang
+            // 
+            this.clngaythang.Caption = "Ngày tháng";
+            this.clngaythang.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.clngaythang.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.clngaythang.FieldName = "ngaythang";
+            this.clngaythang.Name = "clngaythang";
+            this.clngaythang.OptionsColumn.AllowEdit = false;
+            this.clngaythang.Visible = true;
+            this.clngaythang.VisibleIndex = 2;
+            this.clngaythang.Width = 90;
             // 
             // frmPrint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 711);
+            this.ClientSize = new System.Drawing.Size(654, 711);
             this.Controls.Add(this.gridControl1);
             this.Name = "frmPrint";
             this.Text = "frmPrint";
@@ -188,5 +211,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn clid_ngaythang;
         private DevExpress.XtraGrid.Columns.GridColumn clCheck_In_An;
         private DevExpress.XtraGrid.Columns.GridColumn clid_the_STT;
+        private DevExpress.XtraGrid.Columns.GridColumn clngaythang;
     }
 }

@@ -88,11 +88,17 @@
     <Compile Include="5_KeHoachHoiThao_1_ThongQuaQuyTrinh.Designer.cs">
       <DependentUpon>5_KeHoachHoiThao_1_ThongQuaQuyTrinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="6_DanhSachBoiDuongTHuLaoHoiThao_1.cs">
+    <Compile Include="6_PhuLucKeHoachHoiThao_1.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="6_DanhSachBoiDuongTHuLaoHoiThao_1.Designer.cs">
-      <DependentUpon>6_DanhSachBoiDuongTHuLaoHoiThao_1.cs</DependentUpon>
+    <Compile Include="6_PhuLucKeHoachHoiThao_1.Designer.cs">
+      <DependentUpon>6_PhuLucKeHoachHoiThao_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="7_DanhSachBoiDuong_HoiThao_1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="7_DanhSachBoiDuong_HoiThao_1.Designer.cs">
+      <DependentUpon>7_DanhSachBoiDuong_HoiThao_1.cs</DependentUpon>
     </Compile>
     <Compile Include="CheckString.cs" />
     <Compile Include="clsDaTa.cs" />
@@ -177,8 +183,11 @@
     <EmbeddedResource Include="5_KeHoachHoiThao_1_ThongQuaQuyTrinh.resx">
       <DependentUpon>5_KeHoachHoiThao_1_ThongQuaQuyTrinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="6_DanhSachBoiDuongTHuLaoHoiThao_1.resx">
-      <DependentUpon>6_DanhSachBoiDuongTHuLaoHoiThao_1.cs</DependentUpon>
+    <EmbeddedResource Include="6_PhuLucKeHoachHoiThao_1.resx">
+      <DependentUpon>6_PhuLucKeHoachHoiThao_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="7_DanhSachBoiDuong_HoiThao_1.resx">
+      <DependentUpon>7_DanhSachBoiDuong_HoiThao_1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

@@ -248,7 +248,7 @@
             this.clngaythang.FieldName = "ngaythang";
             this.clngaythang.Name = "clngaythang";
             this.clngaythang.Visible = true;
-            this.clngaythang.VisibleIndex = 2;
+            this.clngaythang.VisibleIndex = 1;
             this.clngaythang.Width = 66;
             // 
             // cldiengiai_NgayThang
@@ -258,7 +258,7 @@
             this.cldiengiai_NgayThang.FieldName = "diengiai";
             this.cldiengiai_NgayThang.Name = "cldiengiai_NgayThang";
             this.cldiengiai_NgayThang.Visible = true;
-            this.cldiengiai_NgayThang.VisibleIndex = 1;
+            this.cldiengiai_NgayThang.VisibleIndex = 0;
             this.cldiengiai_NgayThang.Width = 255;
             // 
             // repositoryItemMemoEdit2
@@ -292,8 +292,6 @@
             this.clSTT3.Name = "clSTT3";
             this.clSTT3.OptionsColumn.AllowEdit = false;
             this.clSTT3.OptionsColumn.FixedWidth = true;
-            this.clSTT3.Visible = true;
-            this.clSTT3.VisibleIndex = 0;
             this.clSTT3.Width = 30;
             // 
             // clCheck_In_An
@@ -308,9 +306,11 @@
             // 
             // clid_the_STT
             // 
-            this.clid_the_STT.Caption = "id_the_STT";
+            this.clid_the_STT.Caption = "STT";
             this.clid_the_STT.FieldName = "id_the_STT";
             this.clid_the_STT.Name = "clid_the_STT";
+            this.clid_the_STT.Visible = true;
+            this.clid_the_STT.VisibleIndex = 2;
             // 
             // gridControl_HoiThao
             // 
