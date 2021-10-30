@@ -8,10 +8,18 @@ namespace QuyetToanVCG_TDC_2021
 {
     public partial class _8_ToTrinhPheDuyet_HoiThao_1 : DevExpress.XtraReports.UI.XtraReport
     {
+        string tentotrinh, cancuhopdong, cancukehoac, ngaythang;
         public _8_ToTrinhPheDuyet_HoiThao_1()
         {
             InitializeComponent();
         }
 
+        private void ReportHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            pToTrinh.Value = tentotrinh;
+            pCanCuHopDong.Value = cancuhopdong;
+            pCanCuKeHoach.Value = cancukehoac;
+            pNgayThang.Value = ngaythang;
+        }
     }
 }
