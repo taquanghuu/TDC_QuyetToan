@@ -18,21 +18,29 @@ namespace QuyetToanVCG_TDC_2021
             mid_hopdong_ = xid_hd;
             InitializeComponent();
         }
-        private void Print_MuaVatTu()
+        private void Print_ToTrinh_KeHoach_HoiThao_1(DateTime xngayxx)
         {
-          
+            clsTbhopdong cls = new QuyetToanVCG_TDC_2021.clsTbhopdong();
+            cls.iId_hopdong = mid_hopdong_;
+            DataTable dt = cls.SelectOne();
+           
+          string  sstentotrinh = "" + cls.sTenhopdong.Value + "";
+            string sscancuhopdong = "Căn cứ vào hợp đồng số " + cls.sSohopdong.Value + " ngày " + cls.daNgayhopdong.Value.ToString("dd/MM/yyyy") + " giữa Viện KT cơ giới quân sự và Cục TC-ĐL-CL về việc " + cls.sTenhopdong.Value.ToString() + ";";
+            string sscancukehoac = "Phòng Đo lường - Thí nghiệm kính đề nghị Viện trưởng Viện KT cơ giới quân sự phê duyệt Kế hoạch Hội thảo thông qua quy trình " + cls.sTenhopdong.Value + "./.";
+
+           
 
             Dictionary<string, string> dic = new Dictionary<string, string>();
-     
-            //dic.Add("TenGoiThau", msTenGoiThau);//
-            //dic.Add("HopDongNguon", msHopDongNguon);//
-            //dic.Add("DonViChuQuan", msDonViChuQuan);//            //
-            //dic.Add("SoTien", msSoTien);//
-            //dic.Add("msSoTienBangChu", msSoTienBangChu);//
+            dic.Add("tentotrinh", sstentotrinh);//
+            dic.Add("ngay", xngayxx.ToString("dd"));//
+            dic.Add("thang", xngayxx.ToString("MM"));//
+            dic.Add("nam", xngayxx.ToString("yyyy"));//         //
+            dic.Add("cancuhopdong", sscancuhopdong);//
+            dic.Add("cancukehoach", sscancukehoac);//
 
-        
-            
-                WordUltil wd = new WordUltil(@"C:\Users\Public\Documents\DATA_TDC\_8_ToTrinhPheDuyetHoiThao1.dot", true);
+
+
+            WordUltil wd = new WordUltil(@"C:\Users\Public\Documents\DATA_TDC\_8_ToTrinhPheDuyetHoiThao1.dot", true);
                 wd.WriteFields(dic);
             
             MessageBox.Show("Đã xong");
@@ -43,10 +51,17 @@ namespace QuyetToanVCG_TDC_2021
         {
             if(gridView1.GetFocusedRowCellValue(clid_ngaythang).ToString()!="")
             {
+               
                DateTime xngay= Convert.ToDateTime(gridView1.GetFocusedRowCellValue(clngaythang).ToString());
                 int xid = Convert.ToInt32(gridView1.GetFocusedRowCellValue(clid_the_STT).ToString());
-                Print_HienThi ff = new Print_HienThi(xid, mid_hopdong_, xngay);
-                ff.Show();
+                if (xid == 8)
+                    Print_ToTrinh_KeHoach_HoiThao_1(xngay);
+                else
+                {
+                    Print_HienThi ff = new Print_HienThi(xid, mid_hopdong_, xngay);
+                    ff.Show();
+                }
+          
             }
            
         }
