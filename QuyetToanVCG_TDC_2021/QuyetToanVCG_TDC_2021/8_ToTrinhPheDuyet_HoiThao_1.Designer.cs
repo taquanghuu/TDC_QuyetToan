@@ -53,6 +53,9 @@
             this.pCanCuKeHoach = new DevExpress.XtraReports.Parameters.Parameter();
             this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel9 = new DevExpress.XtraReports.UI.XRLabel();
+            this.pNgayThang = new DevExpress.XtraReports.Parameters.Parameter();
+            this.xrLabel10 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLine3 = new DevExpress.XtraReports.UI.XRLine();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -124,6 +127,7 @@
             // ReportHeader
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLine3,
             this.xrLabel8,
             this.xrLabel4,
             this.xrLabel3,
@@ -132,8 +136,9 @@
             this.xrLabel1,
             this.xrLabel2,
             this.xrLabel5,
-            this.xrLabel9});
-            this.ReportHeader.HeightF = 175.6944F;
+            this.xrLabel9,
+            this.xrLabel10});
+            this.ReportHeader.HeightF = 192.8075F;
             this.ReportHeader.Name = "ReportHeader";
             // 
             // xrLabel4
@@ -307,6 +312,8 @@
             // 
             // xrLabel9
             // 
+            this.xrLabel9.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pNgayThang]")});
             this.xrLabel9.Font = new System.Drawing.Font("Times New Roman", 13F);
             this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(302.0833F, 64.28571F);
             this.xrLabel9.Multiline = true;
@@ -317,6 +324,30 @@
             this.xrLabel9.StylePriority.UseTextAlignment = false;
             this.xrLabel9.Text = "Số:        /Tr-ĐL";
             this.xrLabel9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            // 
+            // pNgayThang
+            // 
+            this.pNgayThang.Description = "ngày tháng";
+            this.pNgayThang.Name = "pNgayThang";
+            // 
+            // xrLabel10
+            // 
+            this.xrLabel10.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(18.00109F, 159.8075F);
+            this.xrLabel10.Multiline = true;
+            this.xrLabel10.Name = "xrLabel10";
+            this.xrLabel10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel10.SizeF = new System.Drawing.SizeF(632F, 23F);
+            this.xrLabel10.StylePriority.UseFont = false;
+            this.xrLabel10.StylePriority.UseTextAlignment = false;
+            this.xrLabel10.Text = "Kính gửi: Viện trưởng Viện Kỹ thuật cơ giới quân sự.";
+            this.xrLabel10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            // 
+            // xrLine3
+            // 
+            this.xrLine3.LocationFloat = new DevExpress.Utils.PointFloat(260.619F, 140.494F);
+            this.xrLine3.Name = "xrLine3";
+            this.xrLine3.SizeF = new System.Drawing.SizeF(156.5476F, 2.083332F);
             // 
             // _8_ToTrinhPheDuyet_HoiThao_1
             // 
@@ -333,7 +364,8 @@
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.pToTrinh,
             this.pCanCuHopDong,
-            this.pCanCuKeHoach});
+            this.pCanCuKeHoach,
+            this.pNgayThang});
             this.Version = "18.1";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
@@ -365,5 +397,8 @@
         private DevExpress.XtraReports.Parameters.Parameter pCanCuKeHoach;
         private DevExpress.XtraReports.UI.XRLabel xrLabel8;
         private DevExpress.XtraReports.UI.XRLabel xrLabel9;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel10;
+        private DevExpress.XtraReports.Parameters.Parameter pNgayThang;
+        private DevExpress.XtraReports.UI.XRLine xrLine3;
     }
 }
