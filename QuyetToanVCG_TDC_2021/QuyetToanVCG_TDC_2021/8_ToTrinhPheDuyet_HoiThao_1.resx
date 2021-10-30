@@ -117,4 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="xrLabel17.Text" xml:space="preserve">
+    <value>          Căn cứ Quy chế quản lý hoạt động Khoa học và Công nghệ trong Viện Kỹ thuật cơ giới quân sự ban hành kèm theo Quyết định số 684/QĐ-VCG ngày 30/9/2016 của Viện trưởng Viện Kỹ thuật cơ giới quân sự;</value>
+  </data>
 </root>

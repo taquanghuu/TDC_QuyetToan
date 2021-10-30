@@ -195,6 +195,9 @@
     <EmbeddedResource Include="7_DanhSachBoiDuong_HoiThao_1.resx">
       <DependentUpon>7_DanhSachBoiDuong_HoiThao_1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="8_ToTrinhPheDuyet_HoiThao_1.resx">
+      <DependentUpon>8_ToTrinhPheDuyet_HoiThao_1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
