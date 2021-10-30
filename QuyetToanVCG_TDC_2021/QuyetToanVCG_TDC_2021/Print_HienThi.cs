@@ -154,6 +154,15 @@ namespace QuyetToanVCG_TDC_2021
             documentViewer1.DocumentSource = xtr111;
 
         }
+
+        private void _8_ToTrinh_hoiThao_1()
+        {
+            _8_ToTrinhPheDuyet_HoiThao_1 xtr111 = new _8_ToTrinhPheDuyet_HoiThao_1(mid_hopdong, mdangaythang);
+
+            xtr111.CreateDocument();
+            documentViewer1.DocumentSource = xtr111;
+
+        }
         //
         private void Print_____()
         {
@@ -162,6 +171,7 @@ namespace QuyetToanVCG_TDC_2021
             else if (mi_id_STT == 5) _5_KeHoach_hoiThao_1();
             else if (mi_id_STT == 6) _6_PhuLuc_KeHoach_hoiThao_1();
             else if (mi_id_STT == 7) _7_DanhSachBoiDuong_HoiThao_1();
+            else if (mi_id_STT == 8) _8_ToTrinh_hoiThao_1();
         }
         private void Print_HienThi_Load(object sender, EventArgs e)
         {
