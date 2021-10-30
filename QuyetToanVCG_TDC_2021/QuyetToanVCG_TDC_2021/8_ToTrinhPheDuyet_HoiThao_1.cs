@@ -8,11 +8,13 @@ namespace QuyetToanVCG_TDC_2021
 {
     public partial class _8_ToTrinhPheDuyet_HoiThao_1 : DevExpress.XtraReports.UI.XtraReport
     {
-        string tentotrinh, cancuhopdong, cancukehoac, ngaythang;
+        string tentotrinh, cancuhopdong, cancukehoac;
+        DateTime ngaythang;
         int mid_hopdong___;
-        public _8_ToTrinhPheDuyet_HoiThao_1(int xid_hd_)
+        public _8_ToTrinhPheDuyet_HoiThao_1(int xid_hd_, DateTime xngaythang)
         {
             mid_hopdong___ = xid_hd_;
+            ngaythang = xngaythang;
             InitializeComponent();
         }
 
@@ -21,7 +23,7 @@ namespace QuyetToanVCG_TDC_2021
             pToTrinh.Value = tentotrinh;
             pCanCuHopDong.Value = cancuhopdong;
             pCanCuKeHoach.Value = cancukehoac;
-            pNgayThang.Value = ngaythang;
+            pNgayThang.Value = "Hà Nội, ngày "+ ngaythang.ToString("dd")+ " tháng " + ngaythang.ToString("MM") + " năm " + ngaythang.ToString("yyyy") + "";
         }
     }
 }
