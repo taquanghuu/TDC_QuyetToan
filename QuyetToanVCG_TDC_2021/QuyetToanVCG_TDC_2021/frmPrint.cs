@@ -32,7 +32,7 @@ namespace QuyetToanVCG_TDC_2021
 
         
             
-                WordUltil wd = new WordUltil(@"C:\Users\Public\Documents\PMQuyetToan\MuaVatTu3.dot", true);
+                WordUltil wd = new WordUltil(@"C:\Users\Public\Documents\DATA_TDC\_8_ToTrinhPheDuyetHoiThao1.dot", true);
                 wd.WriteFields(dic);
             
             MessageBox.Show("Đã xong");
