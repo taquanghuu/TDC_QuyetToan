@@ -18,7 +18,27 @@ namespace QuyetToanVCG_TDC_2021
             mid_hopdong_ = xid_hd;
             InitializeComponent();
         }
-       
+        private void Print_MuaVatTu()
+        {
+          
+
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+     
+            //dic.Add("TenGoiThau", msTenGoiThau);//
+            //dic.Add("HopDongNguon", msHopDongNguon);//
+            //dic.Add("DonViChuQuan", msDonViChuQuan);//            //
+            //dic.Add("SoTien", msSoTien);//
+            //dic.Add("msSoTienBangChu", msSoTienBangChu);//
+
+        
+            
+                WordUltil wd = new WordUltil(@"C:\Users\Public\Documents\PMQuyetToan\MuaVatTu3.dot", true);
+                wd.WriteFields(dic);
+            
+            MessageBox.Show("Đã xong");
+        }
+
+
         private void btPrint1_Click(object sender, EventArgs e)
         {
             if(gridView1.GetFocusedRowCellValue(clid_ngaythang).ToString()!="")
