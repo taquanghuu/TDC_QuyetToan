@@ -100,6 +100,12 @@
     <Compile Include="7_DanhSachBoiDuong_HoiThao_1.Designer.cs">
       <DependentUpon>7_DanhSachBoiDuong_HoiThao_1.cs</DependentUpon>
     </Compile>
+    <Compile Include="8_ToTrinhPheDuyet_HoiThao_1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="8_ToTrinhPheDuyet_HoiThao_1.Designer.cs">
+      <DependentUpon>8_ToTrinhPheDuyet_HoiThao_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="CheckString.cs" />
     <Compile Include="clsDaTa.cs" />
     <Compile Include="clsDBInteractionBase.cs" />
