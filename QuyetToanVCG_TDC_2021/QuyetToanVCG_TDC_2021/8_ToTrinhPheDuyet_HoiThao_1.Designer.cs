@@ -247,7 +247,7 @@
             this.xrLabel24.SizeF = new System.Drawing.SizeF(229.6661F, 52.304F);
             this.xrLabel24.StylePriority.UseFont = false;
             this.xrLabel24.StylePriority.UseTextAlignment = false;
-            this.xrLabel24.Text = "- Viện trưởng;\r\n- Lưu: ĐL-TN.H03.";
+            this.xrLabel24.Text = "- Như trên;\r\n- Lưu: ĐL-TN.H03.";
             this.xrLabel24.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
             // 
             // xrLabel23
