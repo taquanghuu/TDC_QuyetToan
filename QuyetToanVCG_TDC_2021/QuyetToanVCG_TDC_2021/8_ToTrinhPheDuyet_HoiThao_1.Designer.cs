@@ -51,7 +51,6 @@
             this.pToTrinh = new DevExpress.XtraReports.Parameters.Parameter();
             this.pCanCuHopDong = new DevExpress.XtraReports.Parameters.Parameter();
             this.pCanCuKeHoach = new DevExpress.XtraReports.Parameters.Parameter();
-            this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -60,7 +59,7 @@
             this.xrLabel17,
             this.xrLabel6,
             this.xrLabel7});
-            this.Detail.HeightF = 136.7664F;
+            this.Detail.HeightF = 140.933F;
             this.Detail.Name = "Detail";
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -86,9 +85,8 @@
             this.xrLine1,
             this.xrLabel1,
             this.xrLabel2,
-            this.xrLabel5,
-            this.xrLabel8});
-            this.ReportHeader.HeightF = 168.0555F;
+            this.xrLabel5});
+            this.ReportHeader.HeightF = 142.3611F;
             this.ReportHeader.Name = "ReportHeader";
             // 
             // xrLabel4
@@ -188,7 +186,7 @@
             this.xrLabel24.SizeF = new System.Drawing.SizeF(229.6661F, 52.304F);
             this.xrLabel24.StylePriority.UseFont = false;
             this.xrLabel24.StylePriority.UseTextAlignment = false;
-            this.xrLabel24.Text = "- Như trên;\r\n- Lưu: ĐL-TN.H03.";
+            this.xrLabel24.Text = "- Viện trưởng;\r\n- Lưu: ĐL-TN.H03.";
             this.xrLabel24.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopJustify;
             // 
             // xrLabel23
@@ -290,19 +288,6 @@
             this.pCanCuKeHoach.Description = "căn cứ kế hoạch";
             this.pCanCuKeHoach.Name = "pCanCuKeHoach";
             // 
-            // xrLabel8
-            // 
-            this.xrLabel8.Font = new System.Drawing.Font("Times New Roman", 14F);
-            this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(18.00082F, 108.2024F);
-            this.xrLabel8.Multiline = true;
-            this.xrLabel8.Name = "xrLabel8";
-            this.xrLabel8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel8.SizeF = new System.Drawing.SizeF(632.0009F, 27.73859F);
-            this.xrLabel8.StylePriority.UseFont = false;
-            this.xrLabel8.StylePriority.UseTextAlignment = false;
-            this.xrLabel8.Text = "Kính gửi: Viện trưởng Viện kỹ thuật cơ giới quân sự.";
-            this.xrLabel8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
-            // 
             // _8_ToTrinhPheDuyet_HoiThao_1
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -348,6 +333,5 @@
         private DevExpress.XtraReports.Parameters.Parameter pToTrinh;
         private DevExpress.XtraReports.Parameters.Parameter pCanCuHopDong;
         private DevExpress.XtraReports.Parameters.Parameter pCanCuKeHoach;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel8;
     }
 }
