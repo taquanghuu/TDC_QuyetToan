@@ -9,8 +9,10 @@ namespace QuyetToanVCG_TDC_2021
     public partial class _8_ToTrinhPheDuyet_HoiThao_1 : DevExpress.XtraReports.UI.XtraReport
     {
         string tentotrinh, cancuhopdong, cancukehoac, ngaythang;
-        public _8_ToTrinhPheDuyet_HoiThao_1()
+        int mid_hopdong___;
+        public _8_ToTrinhPheDuyet_HoiThao_1(int xid_hd_)
         {
+            mid_hopdong___ = xid_hd_;
             InitializeComponent();
         }
 
