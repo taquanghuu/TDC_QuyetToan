@@ -10,7 +10,38 @@ namespace QuyetToanVCG_TDC_2021
 {
     public partial class clsDaTa : clsDBInteractionBase
     {
-        //tbPhuLuc_XangDau_SA_ID_HD
+        public DataTable tbvthh_SO_TenVTHH(string xtenvthh)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[tbvthh_SO_TenVTHH]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("tbvthh_SO_TenVTHH");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@_tenvthh", SqlDbType.NVarChar, 500, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, xtenvthh));
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("tbvthh_SO_TenVTHH", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
         public DataTable tbPhuLuc_XangDau_SA_ID_HD(int xid_hopdong_)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();

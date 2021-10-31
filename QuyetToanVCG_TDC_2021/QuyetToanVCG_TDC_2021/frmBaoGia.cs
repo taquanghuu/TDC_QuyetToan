@@ -312,7 +312,77 @@ namespace QuyetToanVCG_TDC_2021
         }
         private void btExcel_Click(object sender, EventArgs e)
         {
+            OpenFileDialog f = new OpenFileDialog();
+            f.Filter = "File (*.xls)|*.xls";
+            f.Multiselect = false;
+            f.Title = "Chon CSDL";
+            // f.InitialDirectory = @"Local\Libraries\Documents\QLKH:";
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                
 
+                OleDbConnection con = new OleDbConnection();
+                string Tenfile_Execl;
+                DataTable dt = new DataTable();
+                DataTable dtNganhang = new DataTable();
+                Tenfile_Execl = f.FileName;
+                string str_con = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + Tenfile_Execl + ";Extended Properties=Excel 8.0";
+                con = new OleDbConnection(str_con);
+                con.Open();
+
+
+                OleDbDataAdapter adapter = new OleDbDataAdapter();
+                string str_adapter = "Select * from [Sheet1$]";
+                adapter = new OleDbDataAdapter(str_adapter, con);
+                adapter.Fill(dt);
+                DataTable dt2 = new DataTable();
+
+                dt2.Columns.Add("id_vthh", typeof(int));
+                dt2.Columns.Add("soluong", typeof(int));
+                dt2.Columns.Add("dongia1", typeof(double));
+                dt2.Columns.Add("thanhtien1", typeof(double));
+
+                dt2.Columns.Add("dongia2", typeof(double));
+                dt2.Columns.Add("thanhtien2", typeof(double));
+
+                dt2.Columns.Add("dongia3", typeof(double));
+                dt2.Columns.Add("thanhtien3", typeof(double));
+
+           
+                clsTbvthh cls1 = new clsTbvthh();
+                clsDaTa cls2 = new clsDaTa();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    int id_vthh__;
+                    string tenvthhxxx= dt.Rows[i][0].ToString().Trim();
+                    DataTable dtvthhh = cls2.tbvthh_SO_TenVTHH(tenvthhxxx);
+                    if(dtvthhh.Rows.Count>0)
+                    {
+                        id_vthh__ = Convert.ToInt32(dtvthhh.Rows[0]["id_vthh"].ToString());
+                    }
+                    else
+                    {
+                        cls1.sTenvthh = dt.Rows[i][0].ToString();
+                        cls1.sDonvitinh = dt.Rows[i][1].ToString();
+                        cls1.bKhoa = true;
+                        cls1.Insert();
+                        id_vthh__ = cls1.iId_vthh.Value;
+                    }
+                    DataRow _ravi = dt2.NewRow();
+                    _ravi["id_vthh"] = id_vthh__;
+                    _ravi["soluong"] = 1;
+                    _ravi["dongia1"] = 0;
+                    _ravi["thanhtien1"] = 0;
+                    _ravi["dongia2"] = 0;
+                    _ravi["thanhtien2"] = 0;
+                    _ravi["dongia3"] = 0;
+                    _ravi["thanhtien3"] = 0;
+                    
+                    dt2.Rows.Add(_ravi);
+                  
+                }
+                gridControl_Cho.DataSource = dt2;
+            }
         }
     
         private void search_mahang_cho_EditValueChanged(object sender, EventArgs e)
