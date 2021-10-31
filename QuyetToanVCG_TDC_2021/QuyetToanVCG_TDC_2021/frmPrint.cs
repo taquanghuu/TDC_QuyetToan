@@ -130,5 +130,30 @@ namespace QuyetToanVCG_TDC_2021
             DataTable dt = cls.tbngaythang_SA_Print(mid_hopdong_);
             gridControl1.DataSource = dt;
         }
+
+        private void gridView2_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
+        {
+            clsTbPhuLuc_XangDau cls = new clsTbPhuLuc_XangDau();
+            cls.sNoidung = gridView2.GetFocusedRowCellValue(clnoidung2).ToString();
+            cls.daNgay =Convert.ToDateTime(gridView2.GetFocusedRowCellValue(clngaythang2).ToString());
+            cls.sDonvitinh = gridView2.GetFocusedRowCellValue(cldonvitinh2).ToString();
+            cls.fSoluong = Convert.ToDouble(gridView2.GetFocusedRowCellValue(clsoluong2).ToString());
+            cls.iId_hopdong = mid_hopdong_;
+            if (gridView2.GetFocusedRowCellValue(clid_xd2).ToString() == "")
+            {
+                cls.Insert();
+            }
+            else
+            {
+                cls.iId_xd = Convert.ToInt32(gridView2.GetFocusedRowCellValue(clid_xd2).ToString());
+                cls.Update();
+            }
+        }
+
+        private void gridView2_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column == clSTT2)
+                e.DisplayText = (e.RowHandle + 1).ToString();
+        }
     }
 }
