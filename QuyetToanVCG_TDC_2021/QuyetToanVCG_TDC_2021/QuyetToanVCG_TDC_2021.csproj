@@ -102,6 +102,12 @@
     <Compile Include="17_BaoGia_VPP.Designer.cs">
       <DependentUpon>17_BaoGia_VPP.cs</DependentUpon>
     </Compile>
+    <Compile Include="18_BaoGia_Quan_Do.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="18_BaoGia_Quan_Do.Designer.cs">
+      <DependentUpon>18_BaoGia_Quan_Do.cs</DependentUpon>
+    </Compile>
     <Compile Include="1_BangKeChungTuChiTieu.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -153,11 +159,11 @@
     <Compile Include="clsTbHoiThao.cs" />
     <Compile Include="clsTbhopdong.cs" />
     <Compile Include="clsTbloaihoadon.cs" />
+    <Compile Include="clsTbmafontchu.cs" />
     <Compile Include="clsTbngaythang.cs" />
     <Compile Include="clsTbnhacungcap.cs" />
     <Compile Include="clsTbnhansu.cs" />
     <Compile Include="clsTbPhuLuc_XangDau.cs" />
-    <Compile Include="clsTbPrint.cs" />
     <Compile Include="clsTbvthh.cs" />
     <Compile Include="DataSet_TDC.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -235,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="17_BaoGia_VPP.resx">
       <DependentUpon>17_BaoGia_VPP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="18_BaoGia_Quan_Do.resx">
+      <DependentUpon>18_BaoGia_Quan_Do.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="1_BangKeChungTuChiTieu.resx">
       <DependentUpon>1_BangKeChungTuChiTieu.cs</DependentUpon>

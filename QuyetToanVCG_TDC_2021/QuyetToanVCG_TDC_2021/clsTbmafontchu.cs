@@ -5,15 +5,16 @@ using System.Data.SqlClient;
 
 namespace QuyetToanVCG_TDC_2021
 {
-	public class clsTbPrint : clsDBInteractionBase
+	public class clsTbmafontchu : clsDBInteractionBase
 	{
 		#region Class Member Declarations
-			private SqlInt32		m_iId_print;
-			private SqlString		m_sNoidung;
+			private SqlBoolean		m_bInnghieng;
+			private SqlInt32		m_iId_mafontchu;
+			private SqlString		m_sMafont;
 		#endregion
 
 
-		public clsTbPrint()
+		public clsTbmafontchu()
 		{
 			// Nothing for now.
 		}
@@ -22,7 +23,7 @@ namespace QuyetToanVCG_TDC_2021
 		public override bool Insert()
 		{
 			SqlCommand	scmCmdToExecute = new SqlCommand();
-			scmCmdToExecute.CommandText = "dbo.[pr_tbPrint_Insert]";
+			scmCmdToExecute.CommandText = "dbo.[pr_tbmafontchu_Insert]";
 			scmCmdToExecute.CommandType = CommandType.StoredProcedure;
 
 			// Use base class' connection object
@@ -30,21 +31,22 @@ namespace QuyetToanVCG_TDC_2021
 
 			try
 			{
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@snoidung", SqlDbType.NVarChar, 150, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sNoidung));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@iid_print", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iId_print));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@smafont", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sMafont));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@binnghieng", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bInnghieng));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@iid_mafontchu", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iId_mafontchu));
 
 				// Open connection.
 				m_scoMainConnection.Open();
 
 				// Execute query.
 				scmCmdToExecute.ExecuteNonQuery();
-				m_iId_print = (SqlInt32)scmCmdToExecute.Parameters["@iid_print"].Value;
+				m_iId_mafontchu = (SqlInt32)scmCmdToExecute.Parameters["@iid_mafontchu"].Value;
 				return true;
 			}
 			catch(Exception ex)
 			{
 				// some error occured. Bubble it to caller and encapsulate Exception object
-				throw new Exception("clsTbPrint::Insert::Error occured.", ex);
+				throw new Exception("clsTbmafontchu::Insert::Error occured.", ex);
 			}
 			finally
 			{
@@ -58,7 +60,7 @@ namespace QuyetToanVCG_TDC_2021
 		public override bool Update()
 		{
 			SqlCommand	scmCmdToExecute = new SqlCommand();
-			scmCmdToExecute.CommandText = "dbo.[pr_tbPrint_Update]";
+			scmCmdToExecute.CommandText = "dbo.[pr_tbmafontchu_Update]";
 			scmCmdToExecute.CommandType = CommandType.StoredProcedure;
 
 			// Use base class' connection object
@@ -66,8 +68,9 @@ namespace QuyetToanVCG_TDC_2021
 
 			try
 			{
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@iid_print", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iId_print));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@snoidung", SqlDbType.NVarChar, 150, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sNoidung));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@iid_mafontchu", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iId_mafontchu));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@smafont", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sMafont));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@binnghieng", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bInnghieng));
 
 				// Open connection.
 				m_scoMainConnection.Open();
@@ -79,7 +82,7 @@ namespace QuyetToanVCG_TDC_2021
 			catch(Exception ex)
 			{
 				// some error occured. Bubble it to caller and encapsulate Exception object
-				throw new Exception("clsTbPrint::Update::Error occured.", ex);
+				throw new Exception("clsTbmafontchu::Update::Error occured.", ex);
 			}
 			finally
 			{
@@ -93,7 +96,7 @@ namespace QuyetToanVCG_TDC_2021
 		public override bool Delete()
 		{
 			SqlCommand	scmCmdToExecute = new SqlCommand();
-			scmCmdToExecute.CommandText = "dbo.[pr_tbPrint_Delete]";
+			scmCmdToExecute.CommandText = "dbo.[pr_tbmafontchu_Delete]";
 			scmCmdToExecute.CommandType = CommandType.StoredProcedure;
 
 			// Use base class' connection object
@@ -101,7 +104,7 @@ namespace QuyetToanVCG_TDC_2021
 
 			try
 			{
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@iid_print", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iId_print));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@iid_mafontchu", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iId_mafontchu));
 
 				// Open connection.
 				m_scoMainConnection.Open();
@@ -113,7 +116,7 @@ namespace QuyetToanVCG_TDC_2021
 			catch(Exception ex)
 			{
 				// some error occured. Bubble it to caller and encapsulate Exception object
-				throw new Exception("clsTbPrint::Delete::Error occured.", ex);
+				throw new Exception("clsTbmafontchu::Delete::Error occured.", ex);
 			}
 			finally
 			{
@@ -127,9 +130,9 @@ namespace QuyetToanVCG_TDC_2021
 		public override DataTable SelectOne()
 		{
 			SqlCommand	scmCmdToExecute = new SqlCommand();
-			scmCmdToExecute.CommandText = "dbo.[pr_tbPrint_SelectOne]";
+			scmCmdToExecute.CommandText = "dbo.[pr_tbmafontchu_SelectOne]";
 			scmCmdToExecute.CommandType = CommandType.StoredProcedure;
-			DataTable dtToReturn = new DataTable("tbPrint");
+			DataTable dtToReturn = new DataTable("tbmafontchu");
 			SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
 
 			// Use base class' connection object
@@ -137,7 +140,7 @@ namespace QuyetToanVCG_TDC_2021
 
 			try
 			{
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@iid_print", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iId_print));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@iid_mafontchu", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iId_mafontchu));
 
 				// Open connection.
 				m_scoMainConnection.Open();
@@ -146,15 +149,16 @@ namespace QuyetToanVCG_TDC_2021
 				sdaAdapter.Fill(dtToReturn);
 				if(dtToReturn.Rows.Count > 0)
 				{
-					m_iId_print = (Int32)dtToReturn.Rows[0]["id_print"];
-					m_sNoidung = (string)dtToReturn.Rows[0]["noidung"];
+					m_iId_mafontchu = (Int32)dtToReturn.Rows[0]["id_mafontchu"];
+					m_sMafont = (string)dtToReturn.Rows[0]["mafont"];
+					m_bInnghieng = (bool)dtToReturn.Rows[0]["innghieng"];
 				}
 				return dtToReturn;
 			}
 			catch(Exception ex)
 			{
 				// some error occured. Bubble it to caller and encapsulate Exception object
-				throw new Exception("clsTbPrint::SelectOne::Error occured.", ex);
+				throw new Exception("clsTbmafontchu::SelectOne::Error occured.", ex);
 			}
 			finally
 			{
@@ -169,9 +173,9 @@ namespace QuyetToanVCG_TDC_2021
 		public override DataTable SelectAll()
 		{
 			SqlCommand	scmCmdToExecute = new SqlCommand();
-			scmCmdToExecute.CommandText = "dbo.[pr_tbPrint_SelectAll]";
+			scmCmdToExecute.CommandText = "dbo.[pr_tbmafontchu_SelectAll]";
 			scmCmdToExecute.CommandType = CommandType.StoredProcedure;
-			DataTable dtToReturn = new DataTable("tbPrint");
+			DataTable dtToReturn = new DataTable("tbmafontchu");
 			SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
 
 			// Use base class' connection object
@@ -190,7 +194,7 @@ namespace QuyetToanVCG_TDC_2021
 			catch(Exception ex)
 			{
 				// some error occured. Bubble it to caller and encapsulate Exception object
-				throw new Exception("clsTbPrint::SelectAll::Error occured.", ex);
+				throw new Exception("clsTbmafontchu::SelectAll::Error occured.", ex);
 			}
 			finally
 			{
@@ -203,38 +207,56 @@ namespace QuyetToanVCG_TDC_2021
 
 
 		#region Class Property Declarations
-		public SqlInt32 iId_print
+		public SqlInt32 iId_mafontchu
 		{
 			get
 			{
-				return m_iId_print;
+				return m_iId_mafontchu;
 			}
 			set
 			{
-				SqlInt32 iId_printTmp = (SqlInt32)value;
-				if(iId_printTmp.IsNull)
+				SqlInt32 iId_mafontchuTmp = (SqlInt32)value;
+				if(iId_mafontchuTmp.IsNull)
 				{
-					throw new ArgumentOutOfRangeException("iId_print", "iId_print can't be NULL");
+					throw new ArgumentOutOfRangeException("iId_mafontchu", "iId_mafontchu can't be NULL");
 				}
-				m_iId_print = value;
+				m_iId_mafontchu = value;
 			}
 		}
 
 
-		public SqlString sNoidung
+		public SqlString sMafont
 		{
 			get
 			{
-				return m_sNoidung;
+				return m_sMafont;
 			}
 			set
 			{
-				SqlString sNoidungTmp = (SqlString)value;
-				if(sNoidungTmp.IsNull)
+				SqlString sMafontTmp = (SqlString)value;
+				if(sMafontTmp.IsNull)
 				{
-					throw new ArgumentOutOfRangeException("sNoidung", "sNoidung can't be NULL");
+					throw new ArgumentOutOfRangeException("sMafont", "sMafont can't be NULL");
 				}
-				m_sNoidung = value;
+				m_sMafont = value;
+			}
+		}
+
+
+		public SqlBoolean bInnghieng
+		{
+			get
+			{
+				return m_bInnghieng;
+			}
+			set
+			{
+				SqlBoolean bInnghiengTmp = (SqlBoolean)value;
+				if(bInnghiengTmp.IsNull)
+				{
+					throw new ArgumentOutOfRangeException("bInnghieng", "bInnghieng can't be NULL");
+				}
+				m_bInnghieng = value;
 			}
 		}
 		#endregion

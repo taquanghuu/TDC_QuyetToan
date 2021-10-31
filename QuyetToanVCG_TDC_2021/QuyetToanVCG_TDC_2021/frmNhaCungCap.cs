@@ -14,6 +14,12 @@ namespace QuyetToanVCG_TDC_2021
     {
         private void Load_DaTa()
         {
+            clsTbmafontchu cls2 = new clsTbmafontchu();
+            DataTable dt2 = cls2.SelectAll();
+            search_mafont.DataSource = dt2;
+            search_mafont.DisplayMember = "mafont";
+            search_mafont.ValueMember = "id_mafontchu";
+
             clsTbnhacungcap cls = new clsTbnhacungcap();
             DataTable dt = cls.SelectAll();
             gridControl1.DataSource = dt;
@@ -58,6 +64,7 @@ namespace QuyetToanVCG_TDC_2021
             cls.sMasothue = gridView1.GetFocusedRowCellValue(clmasothue).ToString();
             cls.sDiachi = gridView1.GetFocusedRowCellValue(cldiachi).ToString();
             cls.bKhoa = Convert.ToBoolean(gridView1.GetFocusedRowCellValue(clkhoa).ToString());
+            cls.iId_mafontchu= Convert.ToInt32(gridView1.GetFocusedRowCellValue(clid_mafontchu).ToString());
             if (gridView1.GetFocusedRowCellValue(clid_nhacungcap).ToString() == "")
             {
                 cls.Insert();
@@ -78,6 +85,7 @@ namespace QuyetToanVCG_TDC_2021
         private void gridView1_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
         {
             gridView1.SetFocusedRowCellValue(clkhoa, false);
+            gridView1.SetFocusedRowCellValue(clid_mafontchu, 3);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace QuyetToanVCG_TDC_2021
 	{
 		#region Class Member Declarations
 			private SqlBoolean		m_bKhoa;
-			private SqlInt32		m_iId_nhacungcap;
+			private SqlInt32		m_iId_mafontchu, m_iId_nhacungcap;
 			private SqlString		m_sMasothue, m_sDiachi, m_sTennhacungcap, m_sNguoibaogia;
 		#endregion
 
@@ -36,6 +36,7 @@ namespace QuyetToanVCG_TDC_2021
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sdiachi", SqlDbType.NVarChar, 500, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sDiachi));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bkhoa", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bKhoa));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@smasothue", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sMasothue));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@iid_mafontchu", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iId_mafontchu));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iid_nhacungcap", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iId_nhacungcap));
 
 				// Open connection.
@@ -77,6 +78,7 @@ namespace QuyetToanVCG_TDC_2021
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sdiachi", SqlDbType.NVarChar, 500, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sDiachi));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@bkhoa", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_bKhoa));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@smasothue", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sMasothue));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@iid_mafontchu", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iId_mafontchu));
 
 				// Open connection.
 				m_scoMainConnection.Open();
@@ -161,6 +163,7 @@ namespace QuyetToanVCG_TDC_2021
 					m_sDiachi = (string)dtToReturn.Rows[0]["diachi"];
 					m_bKhoa = (bool)dtToReturn.Rows[0]["khoa"];
 					m_sMasothue = (string)dtToReturn.Rows[0]["masothue"];
+					m_iId_mafontchu = (Int32)dtToReturn.Rows[0]["id_mafontchu"];
 				}
 				return dtToReturn;
 			}
@@ -320,6 +323,24 @@ namespace QuyetToanVCG_TDC_2021
 					throw new ArgumentOutOfRangeException("sMasothue", "sMasothue can't be NULL");
 				}
 				m_sMasothue = value;
+			}
+		}
+
+
+		public SqlInt32 iId_mafontchu
+		{
+			get
+			{
+				return m_iId_mafontchu;
+			}
+			set
+			{
+				SqlInt32 iId_mafontchuTmp = (SqlInt32)value;
+				if(iId_mafontchuTmp.IsNull)
+				{
+					throw new ArgumentOutOfRangeException("iId_mafontchu", "iId_mafontchu can't be NULL");
+				}
+				m_iId_mafontchu = value;
 			}
 		}
 		#endregion
