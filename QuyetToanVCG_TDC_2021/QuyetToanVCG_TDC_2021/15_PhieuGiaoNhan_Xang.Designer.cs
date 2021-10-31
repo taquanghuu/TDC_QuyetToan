@@ -64,6 +64,7 @@
             this.xrTableCell2 = new DevExpress.XtraReports.UI.XRTableCell();
             this.ptenhoadon = new DevExpress.XtraReports.Parameters.Parameter();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
+            this.xrLine2 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLabel21 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel19 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel16 = new DevExpress.XtraReports.UI.XRLabel();
@@ -84,7 +85,6 @@
             this.pngaythang = new DevExpress.XtraReports.Parameters.Parameter();
             this.dataSet_TDC1 = new QuyetToanVCG_TDC_2021.DataSet_TDC();
             this.ptongsotien = new DevExpress.XtraReports.Parameters.Parameter();
-            this.xrLine2 = new DevExpress.XtraReports.UI.XRLine();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
@@ -170,6 +170,7 @@
             this.xrTableCell10.Multiline = true;
             this.xrTableCell10.Name = "xrTableCell10";
             this.xrTableCell10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell10.TextFormatString = "{0:#,#}";
             this.xrTableCell10.Weight = 0.668394815181773D;
             // 
             // xrTableCell11
@@ -183,6 +184,7 @@
             this.xrTableCell11.StylePriority.UseTextAlignment = false;
             this.xrTableCell11.Text = "Đơn giá";
             this.xrTableCell11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrTableCell11.TextFormatString = "{0:#,#}";
             this.xrTableCell11.Weight = 0.98221072203453D;
             // 
             // xrTableCell12
@@ -195,6 +197,7 @@
             this.xrTableCell12.StylePriority.UsePadding = false;
             this.xrTableCell12.StylePriority.UseTextAlignment = false;
             this.xrTableCell12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrTableCell12.TextFormatString = "{0:#,#}";
             this.xrTableCell12.Weight = 1.15544795441663D;
             // 
             // TopMargin
@@ -515,6 +518,12 @@
             this.ReportFooter.HeightF = 250.8632F;
             this.ReportFooter.Name = "ReportFooter";
             // 
+            // xrLine2
+            // 
+            this.xrLine2.LocationFloat = new DevExpress.Utils.PointFloat(652.2501F, 93.75F);
+            this.xrLine2.Name = "xrLine2";
+            this.xrLine2.SizeF = new System.Drawing.SizeF(2F, 2F);
+            // 
             // xrLabel21
             // 
             this.xrLabel21.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
@@ -730,12 +739,6 @@
             this.ptongsotien.Name = "ptongsotien";
             this.ptongsotien.Type = typeof(int);
             this.ptongsotien.ValueInfo = "0";
-            // 
-            // xrLine2
-            // 
-            this.xrLine2.LocationFloat = new DevExpress.Utils.PointFloat(652.2501F, 93.75F);
-            this.xrLine2.Name = "xrLine2";
-            this.xrLine2.SizeF = new System.Drawing.SizeF(2F, 2F);
             // 
             // _15_PhieuGiaoNhan_Xang
             // 
