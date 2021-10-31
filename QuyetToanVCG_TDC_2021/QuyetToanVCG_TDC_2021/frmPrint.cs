@@ -124,6 +124,40 @@ namespace QuyetToanVCG_TDC_2021
             //MessageBox.Show("Đã xong");
         }
 
+        private void _20_Print_BBKS(DateTime xngayxx)
+        {
+            clsTbhopdong cls = new QuyetToanVCG_TDC_2021.clsTbhopdong();
+            cls.iId_hopdong = mid_hopdong_;
+            DataTable dt = cls.SelectOne();
+            clsDaTa cls2 = new clsDaTa();
+            DataTable dt2 = cls2.Tbbaogia_DanhSach_NCC_Cho_SA_ID_HD_TrungThau(mid_hopdong_);
+            string sscuahangtrungthau = dt2.Rows[0]["tennhacungcap"].ToString();
+            string ssdiachi = dt2.Rows[0]["diachi"].ToString().Trim();
+            DataTable dt3 = cls2.Tbbaogia_DanhSach_NCC_Cho_SA_ID_HD_Phu2(mid_hopdong_);
+            string nhaxanh2 = dt3.Rows[0]["tennhacungcap"].ToString();
+            DataTable dt4 = cls2.Tbbaogia_DanhSach_NCC_Cho_SA_ID_HD_Phu3(mid_hopdong_);
+            string nhaxanh3 = dt4.Rows[0]["tennhacungcap"].ToString();
+
+            string caccuahang = "- "+ sscuahangtrungthau + ";\n- "+nhaxanh2+";\n- "+nhaxanh3+";";
+            string sscancuhopdong = "" + cls.sSohopdong.Value + " ngày " + cls.daNgayhopdong.Value.ToString("dd/MM/yyyy") + " giữa Viện KT cơ giới quân sự và Cục TC-ĐL-CL về việc " + cls.sTenhopdong.Value.ToString() + "";
+            
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+                  
+            dic.Add("cancuhopdong", sscancuhopdong);//
+            dic.Add("caccuahang", caccuahang);//
+            dic.Add("cuahangtrungthau", sscuahangtrungthau);//           
+            dic.Add("diachi", ssdiachi);//           
+            dic.Add("ngay", xngayxx.ToString("dd"));//
+            dic.Add("thang", xngayxx.ToString("MM"));//
+            dic.Add("nam", xngayxx.ToString("yyyy"));//         
+
+
+            WordUltil wd = new WordUltil(@"C:\Users\Public\Documents\DATA_TDC\_20_BienBanKhaoSatGia.dot", true);
+            wd.WriteFields(dic);
+
+            //MessageBox.Show("Đã xong");
+        }
+
         private void Print_KeHoachSuDung_XangDau(DateTime xngayxx)
         {
             clsTbhopdong cls = new QuyetToanVCG_TDC_2021.clsTbhopdong();
@@ -185,6 +219,8 @@ namespace QuyetToanVCG_TDC_2021
                     Print_ToTrinh_KeHoach_XangDau(xngay);
                 else if (xid == 15)
                     _15_Print_QuyetDinh_XangDau(xngay);
+                else if (xid == 20)
+                    _20_Print_BBKS(xngay);
                 else
                 {
                     Print_HienThi ff = new Print_HienThi(xid, mid_hopdong_, xngay);
