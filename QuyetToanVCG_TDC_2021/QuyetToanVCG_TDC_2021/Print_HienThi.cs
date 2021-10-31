@@ -280,6 +280,36 @@ namespace QuyetToanVCG_TDC_2021
             documentViewer1.DocumentSource = xtr111;
 
         }
+
+        private void _19_Print_BaoGia_QuanDo()
+        {
+            clsDaTa cls = new clsDaTa();
+            DataTable dt3 = cls.tbbaogia_SA_id_HD(mid_hopdong);
+            double xtongtien__ = Convert.ToDouble(dt3.Compute("SUM(thanhtien)", string.Empty));
+            _18_BaoGia_Quan_Do xtr111 = new _18_BaoGia_Quan_Do(mid_hopdong, mdangaythang, xtongtien__);
+
+
+            DataSet_TDC ds = new DataSet_TDC();
+            ds.tbvthh.Clone();
+            ds.tbvthh.Clear();
+            for (int i = 0; i < dt3.Rows.Count; i++)
+            {
+                DataRow _ravi = ds.tbvthh.NewRow();
+                _ravi["STT"] = (i + 1).ToString();
+                _ravi["tenvthh"] = dt3.Rows[i]["tenvthh"].ToString();
+                _ravi["donvitinh"] = dt3.Rows[i]["donvitinh"].ToString();
+                _ravi["soluong"] = Convert.ToDouble(dt3.Rows[i]["soluong"].ToString());
+                _ravi["dongia"] = Convert.ToDouble(dt3.Rows[i]["dongia"].ToString());
+                _ravi["thanhtien"] = Convert.ToDouble(dt3.Rows[i]["thanhtien"].ToString());
+                ds.tbvthh.Rows.Add(_ravi);
+            }
+            xtr111.DataSource = null;
+            xtr111.DataSource = ds.tbvthh;
+            xtr111.DataMember = "tbvthh";
+            xtr111.CreateDocument();
+            documentViewer1.DocumentSource = xtr111;
+
+        }
         private void Print_____()
         {
             if (mi_id_STT == 1) _1_Print_BangKeChungTuChiTieu();
@@ -292,6 +322,7 @@ namespace QuyetToanVCG_TDC_2021
             else if (mi_id_STT == 16) _16_Print_PhieuGiao_XangDau();
             else if (mi_id_STT == 17) _17_Print_BaoGia_VPP();
             else if (mi_id_STT == 18) _18_Print_PhieuGiao_VPP();
+            else if (mi_id_STT == 19) _19_Print_BaoGia_QuanDo();
         }
         private void Print_HienThi_Load(object sender, EventArgs e)
         {
