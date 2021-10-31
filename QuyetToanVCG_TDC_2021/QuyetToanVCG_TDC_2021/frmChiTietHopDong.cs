@@ -188,6 +188,7 @@ namespace QuyetToanVCG_TDC_2021
             Luu_duLieu_HoiThao();
             Luu_duLieu_NgayThang();
             MessageBox.Show("Đã lưu");
+            Load_DaTa();
         }
         private void btThoat_Click(object sender, EventArgs e)
         {

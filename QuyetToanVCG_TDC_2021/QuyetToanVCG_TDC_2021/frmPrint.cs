@@ -79,7 +79,7 @@ namespace QuyetToanVCG_TDC_2021
 
             string stenkehoach = "Phục vụ " + cls.sTenhopdong.Value + "";
             string shopdong = ""+cls.sSohopdong.Value+" ký ngày "+cls.daNgayhopdong.Value.ToString("dd/MM/yyyy")+ " giữa Viện KT cơ giới quân sự và Cục TC-ĐL-CL về việc "+cls.sTenhopdong.Value+"";
-            string ssoluong = "";
+            string ssoluong = txtGhiChu.Text;
 
          
             string sdiadiem = cls.sGhiChu.Value;
@@ -99,7 +99,8 @@ namespace QuyetToanVCG_TDC_2021
             dic.Add("diadiem", sdiadiem);//
             dic.Add("hopdong", shopdong);//
             dic.Add("soluong", ssoluong);//
-
+            //WordUltil wd = new WordUltil(@"C:\Users\Public\Documents\DATA_TDC\_10_KeHoachSuDungXangDau.dot", true);
+            //wd.WriteFields(dic);
 
             DataTable dtxangdau = (DataTable)gridControl2.DataSource;
             if (dtxangdau.Rows.Count > 0)
@@ -108,11 +109,11 @@ namespace QuyetToanVCG_TDC_2021
                 wd.WriteFields(dic);
                 //wd.WriteTable(dtxangdau, 2);
             }
-                //for (int i = 0; i < dtxangdau.Rows.Count; ++i)
-                //{
-                //    dtxangdau.Rows[i]["ngay"] = i + 1;
-                //}
-                
+            //    //for (int i = 0; i < dtxangdau.Rows.Count; ++i)
+            //    //{
+            //    //    dtxangdau.Rows[i]["ngay"] = i + 1;
+            //    //}
+
         }
         private void btPrint1_Click(object sender, EventArgs e)
         {
