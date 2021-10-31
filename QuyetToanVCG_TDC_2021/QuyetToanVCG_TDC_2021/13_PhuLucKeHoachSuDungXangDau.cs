@@ -17,7 +17,7 @@ namespace QuyetToanVCG_TDC_2021
 
         private void PageHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
-            pngaythang.Value = "Kèm theo kế hoạch sử dụng xăng dầu số      /KH-ĐL ngày "+ngaykehoach_.ToString("dd/MM/yyyy")+"";
+            pngaythang.Value = "(Kèm theo kế hoạch số       /KH-ĐL ngày "+ngaykehoach_.ToString("dd/MM/yyyy")+")";
         }
     }
 }

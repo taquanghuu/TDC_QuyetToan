@@ -68,8 +68,7 @@
             // 
             // xrTable2
             // 
-            this.xrTable2.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-            | DevExpress.XtraPrinting.BorderSide.Right) 
+            this.xrTable2.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTable2.Font = new System.Drawing.Font("Times New Roman", 14F);
             this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(1.589457E-05F, 0F);
@@ -161,6 +160,7 @@
             // 
             // TopMargin
             // 
+            this.TopMargin.HeightF = 112.5F;
             this.TopMargin.Name = "TopMargin";
             this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -311,7 +311,7 @@
             this.dataSet_TDC1});
             this.DataMember = "tbBangKeHoaDon";
             this.DataSource = this.dataSet_TDC1;
-            this.Margins = new System.Drawing.Printing.Margins(100, 52, 100, 100);
+            this.Margins = new System.Drawing.Printing.Margins(100, 52, 112, 100);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.pngaythang});
             this.Version = "18.1";
