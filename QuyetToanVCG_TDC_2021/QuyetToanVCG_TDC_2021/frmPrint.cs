@@ -78,8 +78,8 @@ namespace QuyetToanVCG_TDC_2021
             DataTable dt = cls.SelectOne();
 
             string stenkehoach = "Phục vụ " + cls.sTenhopdong.Value + "";
-            string shopdong = "Căn cứ vào hợp đồng số " + cls.sSohopdong.Value + " ngày " + cls.daNgayhopdong.Value.ToString("dd/MM/yyyy") + " giữa Viện KT cơ giới quân sự và Cục TC-ĐL-CL về việc " + cls.sTenhopdong.Value.ToString() + ";";
-            string ssoluong = "Phòng Đo lường - Thí nghiệm kính đề nghị Viện trưởng Viện KT cơ giới quân sự phê duyệt Kế hoạch Hội thảo thông qua quy trình " + cls.sTenhopdong.Value + "./.";
+            string shopdong = ""+cls.sSohopdong.Value+" ký ngày "+cls.daNgayhopdong.Value.ToString("dd/MM/yyyy")+ " giữa Viện KT cơ giới quân sự và Cục TC-ĐL-CL về việc "+cls.sTenhopdong.Value+"";
+            string ssoluong = "";
 
          
             string sdiadiem = cls.sGhiChu.Value;
@@ -101,8 +101,15 @@ namespace QuyetToanVCG_TDC_2021
             dic.Add("soluong", ssoluong);//
 
 
+            DataTable dtxangdau = (DataTable)gridControl2.DataSource;
+           
+            //for (int i = 0; i < dtxangdau.Rows.Count; ++i)
+            //{
+            //    dtxangdau.Rows[i]["ngay"] = i + 1;
+            //}
             WordUltil wd = new WordUltil(@"C:\Users\Public\Documents\DATA_TDC\_10_KeHoachSuDungXangDau.dot", true);
             wd.WriteFields(dic);
+            wd.WriteTable(dtxangdau, 2);
         }
         private void btPrint1_Click(object sender, EventArgs e)
         {
@@ -138,16 +145,23 @@ namespace QuyetToanVCG_TDC_2021
             clsDaTa cls = new clsDaTa();
             DataTable dt = cls.tbngaythang_SA_Print(mid_hopdong_);
             gridControl1.DataSource = dt;
+
+            DataTable dt2 = cls.tbPhuLuc_XangDau_SA_ID_HD(mid_hopdong_);
+            gridControl2.DataSource = dt2;
+            if(dt2.Rows.Count>0)
+            txtGhiChu.Text = dt2.Rows[0]["ghichu"].ToString();
         }
 
         private void gridView2_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
         {
             clsTbPhuLuc_XangDau cls = new clsTbPhuLuc_XangDau();
             cls.sNoidung = gridView2.GetFocusedRowCellValue(clnoidung2).ToString();
-            cls.daNgay =Convert.ToDateTime(gridView2.GetFocusedRowCellValue(clngaythang2).ToString());
+            DateTime ngayxx= Convert.ToDateTime(gridView2.GetFocusedRowCellValue(clngaythang2).ToString());
+            cls.sNgay = ngayxx.ToString("dd/MM/yyyy");
             cls.sDonvitinh = gridView2.GetFocusedRowCellValue(cldonvitinh2).ToString();
             cls.fSoluong = Convert.ToDouble(gridView2.GetFocusedRowCellValue(clsoluong2).ToString());
             cls.iId_hopdong = mid_hopdong_;
+            cls.sGhichu = txtGhiChu.Text;
             if (gridView2.GetFocusedRowCellValue(clid_xd2).ToString() == "")
             {
                 cls.Insert();

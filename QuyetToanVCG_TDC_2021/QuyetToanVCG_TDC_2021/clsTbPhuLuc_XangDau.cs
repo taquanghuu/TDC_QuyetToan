@@ -8,10 +8,9 @@ namespace QuyetToanVCG_TDC_2021
 	public class clsTbPhuLuc_XangDau : clsDBInteractionBase
 	{
 		#region Class Member Declarations
-			private SqlDateTime		m_daNgay;
 			private SqlDouble		m_fSoluong;
 			private SqlInt32		m_iId_hopdong, m_iId_xd;
-			private SqlString		m_sNoidung, m_sDonvitinh;
+			private SqlString		m_sGhichu, m_sNgay, m_sNoidung, m_sDonvitinh;
 		#endregion
 
 
@@ -32,11 +31,12 @@ namespace QuyetToanVCG_TDC_2021
 
 			try
 			{
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@dangay", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_daNgay));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@sngay", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sNgay));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@snoidung", SqlDbType.NVarChar, 500, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sNoidung));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sdonvitinh", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sDonvitinh));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@fsoluong", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_fSoluong));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iid_hopdong", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iId_hopdong));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@sghichu", SqlDbType.NVarChar, 500, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sGhichu));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iid_xd", SqlDbType.Int, 4, ParameterDirection.Output, false, 10, 0, "", DataRowVersion.Proposed, m_iId_xd));
 
 				// Open connection.
@@ -73,11 +73,12 @@ namespace QuyetToanVCG_TDC_2021
 			try
 			{
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iid_xd", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iId_xd));
-				scmCmdToExecute.Parameters.Add(new SqlParameter("@dangay", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_daNgay));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@sngay", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sNgay));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@snoidung", SqlDbType.NVarChar, 500, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sNoidung));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@sdonvitinh", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sDonvitinh));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@fsoluong", SqlDbType.Float, 8, ParameterDirection.Input, false, 38, 0, "", DataRowVersion.Proposed, m_fSoluong));
 				scmCmdToExecute.Parameters.Add(new SqlParameter("@iid_hopdong", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, m_iId_hopdong));
+				scmCmdToExecute.Parameters.Add(new SqlParameter("@sghichu", SqlDbType.NVarChar, 500, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, m_sGhichu));
 
 				// Open connection.
 				m_scoMainConnection.Open();
@@ -157,11 +158,12 @@ namespace QuyetToanVCG_TDC_2021
 				if(dtToReturn.Rows.Count > 0)
 				{
 					m_iId_xd = (Int32)dtToReturn.Rows[0]["id_xd"];
-					m_daNgay = (DateTime)dtToReturn.Rows[0]["ngay"];
+					m_sNgay = (string)dtToReturn.Rows[0]["ngay"];
 					m_sNoidung = (string)dtToReturn.Rows[0]["noidung"];
 					m_sDonvitinh = (string)dtToReturn.Rows[0]["donvitinh"];
 					m_fSoluong = (double)dtToReturn.Rows[0]["soluong"];
 					m_iId_hopdong = (Int32)dtToReturn.Rows[0]["id_hopdong"];
+					m_sGhichu = (string)dtToReturn.Rows[0]["ghichu"];
 				}
 				return dtToReturn;
 			}
@@ -235,20 +237,20 @@ namespace QuyetToanVCG_TDC_2021
 		}
 
 
-		public SqlDateTime daNgay
+		public SqlString sNgay
 		{
 			get
 			{
-				return m_daNgay;
+				return m_sNgay;
 			}
 			set
 			{
-				SqlDateTime daNgayTmp = (SqlDateTime)value;
-				if(daNgayTmp.IsNull)
+				SqlString sNgayTmp = (SqlString)value;
+				if(sNgayTmp.IsNull)
 				{
-					throw new ArgumentOutOfRangeException("daNgay", "daNgay can't be NULL");
+					throw new ArgumentOutOfRangeException("sNgay", "sNgay can't be NULL");
 				}
-				m_daNgay = value;
+				m_sNgay = value;
 			}
 		}
 
@@ -321,6 +323,24 @@ namespace QuyetToanVCG_TDC_2021
 					throw new ArgumentOutOfRangeException("iId_hopdong", "iId_hopdong can't be NULL");
 				}
 				m_iId_hopdong = value;
+			}
+		}
+
+
+		public SqlString sGhichu
+		{
+			get
+			{
+				return m_sGhichu;
+			}
+			set
+			{
+				SqlString sGhichuTmp = (SqlString)value;
+				if(sGhichuTmp.IsNull)
+				{
+					throw new ArgumentOutOfRangeException("sGhichu", "sGhichu can't be NULL");
+				}
+				m_sGhichu = value;
 			}
 		}
 		#endregion
