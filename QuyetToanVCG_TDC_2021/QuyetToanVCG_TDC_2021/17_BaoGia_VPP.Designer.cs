@@ -269,6 +269,7 @@
             this.xrTableCell10.Multiline = true;
             this.xrTableCell10.Name = "xrTableCell10";
             this.xrTableCell10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell10.TextFormatString = "{0:#,#}";
             this.xrTableCell10.Weight = 0.668394815181773D;
             // 
             // xrTableCell11
@@ -282,6 +283,7 @@
             this.xrTableCell11.StylePriority.UseTextAlignment = false;
             this.xrTableCell11.Text = "Đơn giá";
             this.xrTableCell11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrTableCell11.TextFormatString = "{0:#,#}";
             this.xrTableCell11.Weight = 0.98221072203453D;
             // 
             // xrTableCell12
@@ -294,6 +296,7 @@
             this.xrTableCell12.StylePriority.UsePadding = false;
             this.xrTableCell12.StylePriority.UseTextAlignment = false;
             this.xrTableCell12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrTableCell12.TextFormatString = "{0:#,#}";
             this.xrTableCell12.Weight = 1.15544795441663D;
             // 
             // ReportFooter
@@ -386,6 +389,7 @@
             this.xrTableCell18.StylePriority.UsePadding = false;
             this.xrTableCell18.StylePriority.UseTextAlignment = false;
             this.xrTableCell18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrTableCell18.TextFormatString = "{0:#,#}";
             this.xrTableCell18.Weight = 1.15544884904912D;
             // 
             // xrLabel10

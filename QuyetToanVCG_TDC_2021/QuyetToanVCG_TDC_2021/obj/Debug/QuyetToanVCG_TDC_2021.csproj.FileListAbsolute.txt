@@ -781,3 +781,4 @@ C:\TDC\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\obj\Debug\QuyetToanVCG_TDC_20
 C:\TDC\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\obj\Debug\QuyetToanVCG_TDC_2021._15_PhieuGiaoNhan_Xang.resources
 C:\TDC\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\obj\Debug\QuyetToanVCG_TDC_2021.frmBaoGia_VPP.resources
 C:\TDC\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\obj\Debug\QuyetToanVCG_TDC_2021.frmBaoGia_XangDau.resources
+C:\TDC\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\obj\Debug\QuyetToanVCG_TDC_2021._17_BaoGia_VPP.resources
