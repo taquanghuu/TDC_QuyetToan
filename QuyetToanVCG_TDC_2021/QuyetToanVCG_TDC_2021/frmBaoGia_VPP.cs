@@ -56,14 +56,8 @@ namespace QuyetToanVCG_TDC_2021
 
           
         }
+       
         private void Luu_DuLieu()
-        {
-
-            Luu_duLieu_BaoGia_VPP();
-            MessageBox.Show("Đã lưu");
-            Load_DaTa();
-        }
-        private void Luu_duLieu_BaoGia_VPP()
         {
             clsDaTa cls = new clsDaTa();
             cls.tbbaogia_VPP_update_all_tontai_W_id_hd(mid_hopdong_, false);
@@ -102,6 +96,8 @@ namespace QuyetToanVCG_TDC_2021
                         cls2.Delete();
                     }
                 }
+                MessageBox.Show("Đã lưu");
+                Load_DaTa();
             }
         }
 
