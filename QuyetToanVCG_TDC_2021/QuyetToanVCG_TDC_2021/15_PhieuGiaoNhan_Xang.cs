@@ -19,6 +19,7 @@ namespace QuyetToanVCG_TDC_2021
 
         private void PageHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
+            ptenhoadon.Value = "";
             pngaythang.Value = "Ngày "+ ngaythang_.ToString("dd")+ " tháng " + ngaythang_.ToString("MM") + " năm " + ngaythang_.ToString("yyyy") + "";
             ptongsotien.Value = tongtien_;
         }

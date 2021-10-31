@@ -73,8 +73,6 @@
             this.xrLabel17 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel20 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel22 = new DevExpress.XtraReports.UI.XRLabel();
-            this.pngaythang = new DevExpress.XtraReports.Parameters.Parameter();
-            this.dataSet_TDC1 = new QuyetToanVCG_TDC_2021.DataSet_TDC();
             this.xrTable3 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow3 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell13 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -83,11 +81,14 @@
             this.xrTableCell16 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell17 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell18 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.pngaythang = new DevExpress.XtraReports.Parameters.Parameter();
+            this.dataSet_TDC1 = new QuyetToanVCG_TDC_2021.DataSet_TDC();
             this.ptongsotien = new DevExpress.XtraReports.Parameters.Parameter();
+            this.xrLine2 = new DevExpress.XtraReports.UI.XRLine();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet_TDC1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_TDC1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -101,8 +102,7 @@
             // 
             // xrTable2
             // 
-            this.xrTable2.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-            | DevExpress.XtraPrinting.BorderSide.Right) 
+            this.xrTable2.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTable2.Font = new System.Drawing.Font("Times New Roman", 14F);
             this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(0.0008401416F, 0F);
@@ -183,7 +183,7 @@
             this.xrTableCell11.StylePriority.UseTextAlignment = false;
             this.xrTableCell11.Text = "Đơn giá";
             this.xrTableCell11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.xrTableCell11.Weight = 0.98221072203453008D;
+            this.xrTableCell11.Weight = 0.98221072203453D;
             // 
             // xrTableCell12
             // 
@@ -195,7 +195,7 @@
             this.xrTableCell12.StylePriority.UsePadding = false;
             this.xrTableCell12.StylePriority.UseTextAlignment = false;
             this.xrTableCell12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.xrTableCell12.Weight = 1.1554479544166276D;
+            this.xrTableCell12.Weight = 1.15544795441663D;
             // 
             // TopMargin
             // 
@@ -490,7 +490,7 @@
             this.xrTableCell2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrTableCell2.StylePriority.UsePadding = false;
             this.xrTableCell2.Text = "Thành tiền\r\n(đồng)";
-            this.xrTableCell2.Weight = 1.1554488490491206D;
+            this.xrTableCell2.Weight = 1.15544884904912D;
             // 
             // ptenhoadon
             // 
@@ -501,6 +501,7 @@
             // ReportFooter
             // 
             this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLine2,
             this.xrLabel21,
             this.xrLabel19,
             this.xrLabel16,
@@ -511,7 +512,7 @@
             this.xrLabel20,
             this.xrLabel22,
             this.xrTable3});
-            this.ReportFooter.HeightF = 250.8631F;
+            this.ReportFooter.HeightF = 250.8632F;
             this.ReportFooter.Name = "ReportFooter";
             // 
             // xrLabel21
@@ -623,7 +624,7 @@
             this.xrLabel22.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pngaythang]")});
             this.xrLabel22.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Italic);
-            this.xrLabel22.LocationFloat = new DevExpress.Utils.PointFloat(442.2228F, 83.0177F);
+            this.xrLabel22.LocationFloat = new DevExpress.Utils.PointFloat(442.2229F, 70.74998F);
             this.xrLabel22.Multiline = true;
             this.xrLabel22.Name = "xrLabel22";
             this.xrLabel22.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -633,20 +634,9 @@
             this.xrLabel22.Text = "Ngày       tháng     năm 2021";
             this.xrLabel22.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             // 
-            // pngaythang
-            // 
-            this.pngaythang.Description = "ngày tháng";
-            this.pngaythang.Name = "pngaythang";
-            // 
-            // dataSet_TDC1
-            // 
-            this.dataSet_TDC1.DataSetName = "DataSet_TDC";
-            this.dataSet_TDC1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // xrTable3
             // 
-            this.xrTable3.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-            | DevExpress.XtraPrinting.BorderSide.Right) 
+            this.xrTable3.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTable3.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
             this.xrTable3.LocationFloat = new DevExpress.Utils.PointFloat(0.0008424123F, 0F);
@@ -722,7 +712,17 @@
             this.xrTableCell18.StylePriority.UsePadding = false;
             this.xrTableCell18.StylePriority.UseTextAlignment = false;
             this.xrTableCell18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.xrTableCell18.Weight = 1.1554488490491206D;
+            this.xrTableCell18.Weight = 1.15544884904912D;
+            // 
+            // pngaythang
+            // 
+            this.pngaythang.Description = "ngày tháng";
+            this.pngaythang.Name = "pngaythang";
+            // 
+            // dataSet_TDC1
+            // 
+            this.dataSet_TDC1.DataSetName = "DataSet_TDC";
+            this.dataSet_TDC1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // ptongsotien
             // 
@@ -730,6 +730,12 @@
             this.ptongsotien.Name = "ptongsotien";
             this.ptongsotien.Type = typeof(int);
             this.ptongsotien.ValueInfo = "0";
+            // 
+            // xrLine2
+            // 
+            this.xrLine2.LocationFloat = new DevExpress.Utils.PointFloat(652.2501F, 93.75F);
+            this.xrLine2.Name = "xrLine2";
+            this.xrLine2.SizeF = new System.Drawing.SizeF(2F, 2F);
             // 
             // _15_PhieuGiaoNhan_Xang
             // 
@@ -754,8 +760,8 @@
             this.Version = "18.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet_TDC1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_TDC1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -818,5 +824,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell17;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell18;
         private DevExpress.XtraReports.Parameters.Parameter ptongsotien;
+        private DevExpress.XtraReports.UI.XRLine xrLine2;
     }
 }

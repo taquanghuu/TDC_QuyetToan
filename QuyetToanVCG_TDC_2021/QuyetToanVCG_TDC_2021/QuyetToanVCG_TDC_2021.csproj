@@ -96,6 +96,12 @@
     <Compile Include="15_PhieuGiaoNhan_Xang.Designer.cs">
       <DependentUpon>15_PhieuGiaoNhan_Xang.cs</DependentUpon>
     </Compile>
+    <Compile Include="17_BaoGia_VPP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="17_BaoGia_VPP.Designer.cs">
+      <DependentUpon>17_BaoGia_VPP.cs</DependentUpon>
+    </Compile>
     <Compile Include="1_BangKeChungTuChiTieu.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -146,6 +152,7 @@
     <Compile Include="clsTbdonvi.cs" />
     <Compile Include="clsTbHoiThao.cs" />
     <Compile Include="clsTbhopdong.cs" />
+    <Compile Include="clsTbloaihoadon.cs" />
     <Compile Include="clsTbngaythang.cs" />
     <Compile Include="clsTbnhacungcap.cs" />
     <Compile Include="clsTbnhansu.cs" />
@@ -225,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="15_PhieuGiaoNhan_Xang.resx">
       <DependentUpon>15_PhieuGiaoNhan_Xang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="17_BaoGia_VPP.resx">
+      <DependentUpon>17_BaoGia_VPP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="1_BangKeChungTuChiTieu.resx">
       <DependentUpon>1_BangKeChungTuChiTieu.cs</DependentUpon>

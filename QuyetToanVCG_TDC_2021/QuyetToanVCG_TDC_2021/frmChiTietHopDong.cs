@@ -26,6 +26,12 @@ namespace QuyetToanVCG_TDC_2021
             search_NhanSu.DataSource = dt;
             search_NhanSu.DisplayMember = "hoten";
             search_NhanSu.ValueMember = "id_nhansu";
+
+            clsTbloaihoadon cls2 = new clsTbloaihoadon();
+            DataTable dt2 = cls2.SelectAll();
+            search_loaihoadon.DataSource = dt2;
+            search_loaihoadon.DisplayMember = "tenhoadon";
+            search_loaihoadon.ValueMember = "id_loaihoadon";
         }
         private void Load_DaTa()
         {
@@ -71,6 +77,7 @@ namespace QuyetToanVCG_TDC_2021
                     cls2.bTontai = true;
                     cls2.bKhoa = false;
                     cls2.bDanhSachCapTien= Convert.ToBoolean(dt2.Rows[i]["DanhSachCapTien"].ToString());
+                    cls2.iId_loaihoadon= Convert.ToInt32(dt2.Rows[i]["id_loaihoadon"].ToString());
                     if (dt2.Rows[i]["id_bangke"].ToString() == "")
                         cls2.Insert();
                     else
