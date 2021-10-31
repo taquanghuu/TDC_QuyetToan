@@ -38,10 +38,10 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="STT" msprop:Generator_ColumnVarNameInTable="columnSTT" msprop:Generator_ColumnPropNameInRow="STT" msprop:Generator_ColumnPropNameInTable="STTColumn" msprop:Generator_UserColumnName="STT" type="xs:string" minOccurs="0" />
-              <xs:element name="ngay" msprop:Generator_ColumnVarNameInTable="columnngay" msprop:Generator_ColumnPropNameInRow="ngay" msprop:Generator_ColumnPropNameInTable="ngayColumn" msprop:Generator_UserColumnName="ngay" type="xs:string" minOccurs="0" />
+              <xs:element name="ngay" msprop:Generator_ColumnVarNameInTable="columnngay" msprop:Generator_ColumnPropNameInRow="ngay" msprop:Generator_ColumnPropNameInTable="ngayColumn" msprop:Generator_UserColumnName="ngay" type="xs:dateTime" minOccurs="0" />
               <xs:element name="noidung" msprop:Generator_ColumnVarNameInTable="columnnoidung" msprop:Generator_ColumnPropNameInRow="noidung" msprop:Generator_ColumnPropNameInTable="noidungColumn" msprop:Generator_UserColumnName="noidung" type="xs:string" minOccurs="0" />
               <xs:element name="donvitinh" msprop:Generator_ColumnVarNameInTable="columndonvitinh" msprop:Generator_ColumnPropNameInRow="donvitinh" msprop:Generator_ColumnPropNameInTable="donvitinhColumn" msprop:Generator_UserColumnName="donvitinh" type="xs:string" minOccurs="0" />
-              <xs:element name="soluong" msprop:Generator_ColumnVarNameInTable="columnsoluong" msprop:Generator_ColumnPropNameInRow="soluong" msprop:Generator_ColumnPropNameInTable="soluongColumn" msprop:Generator_UserColumnName="soluong" type="xs:string" minOccurs="0" />
+              <xs:element name="soluong" msprop:Generator_ColumnVarNameInTable="columnsoluong" msprop:Generator_ColumnPropNameInRow="soluong" msprop:Generator_ColumnPropNameInTable="soluongColumn" msprop:Generator_UserColumnName="soluong" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

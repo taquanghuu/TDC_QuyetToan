@@ -166,28 +166,27 @@ namespace QuyetToanVCG_TDC_2021
 
         private void _13_PhuLuc_KeHoach_XangDau()
         {
-            _13_PhuLucKeHoachSuDungXangDau xtr111 = new _13_PhuLucKeHoachSuDungXangDau();
+            _13_PhuLucKeHoachSuDungXangDau xtr111 = new _13_PhuLucKeHoachSuDungXangDau(mdangaythang);
             clsDaTa cls = new clsDaTa();
-            DataTable dt3 = cls.tbHoiThao_SA_ID_HD(mid_hopdong);
+            DataTable dt3 = cls.tbXangDau_SA_ID_HD(mid_hopdong);
 
 
             DataSet_TDC ds = new DataSet_TDC();
-            ds.tbHoiThao.Clone();
-            ds.tbHoiThao.Clear();
+            ds.tbXangDau.Clone();
+            ds.tbXangDau.Clear();
             for (int i = 0; i < dt3.Rows.Count; i++)
             {
-                DataRow _ravi = ds.tbHoiThao.NewRow();
+                DataRow _ravi = ds.tbXangDau.NewRow();
                 _ravi["STT"] = (i + 1).ToString();
-                _ravi["HoTen"] = dt3.Rows[i]["hoten_phuluchoithao"].ToString();
-                if (dt3.Rows[i]["tenchucvu"].ToString() == "Trợ lý KHQS")
-                    _ravi["ChucVu"] = "Trợ lý KHQS";
-                else _ravi["ChucVu"] = dt3.Rows[i]["chucvu_phuluchoithao"].ToString();
-                _ravi["CuongVi"] = dt3.Rows[i]["tenchucdanh"].ToString();
-                ds.tbHoiThao.Rows.Add(_ravi);
+                _ravi["ngay"] = Convert.ToDateTime(dt3.Rows[i]["ngay"].ToString());
+                _ravi["donvitinh"] = dt3.Rows[i]["donvitinh"].ToString();
+                _ravi["soluong"] =Convert.ToDouble(dt3.Rows[i]["soluong"].ToString());
+                _ravi["noidung"] = dt3.Rows[i]["noidung"].ToString();
+                ds.tbXangDau.Rows.Add(_ravi);
             }
             xtr111.DataSource = null;
-            xtr111.DataSource = ds.tbHoiThao;
-            xtr111.DataMember = "tbHoiThao";
+            xtr111.DataSource = ds.tbXangDau;
+            xtr111.DataMember = "tbXangDau";
             xtr111.CreateDocument();
             documentViewer1.DocumentSource = xtr111;
 

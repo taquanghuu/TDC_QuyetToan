@@ -1075,7 +1075,7 @@ namespace QuyetToanVCG_TDC_2021 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tbXangDauRow AddtbXangDauRow(string STT, string ngay, string noidung, string donvitinh, string soluong) {
+            public tbXangDauRow AddtbXangDauRow(string STT, System.DateTime ngay, string noidung, string donvitinh, double soluong) {
                 tbXangDauRow rowtbXangDauRow = ((tbXangDauRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         STT,
@@ -1117,13 +1117,13 @@ namespace QuyetToanVCG_TDC_2021 {
             private void InitClass() {
                 this.columnSTT = new global::System.Data.DataColumn("STT", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSTT);
-                this.columnngay = new global::System.Data.DataColumn("ngay", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnngay = new global::System.Data.DataColumn("ngay", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnngay);
                 this.columnnoidung = new global::System.Data.DataColumn("noidung", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnoidung);
                 this.columndonvitinh = new global::System.Data.DataColumn("donvitinh", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndonvitinh);
-                this.columnsoluong = new global::System.Data.DataColumn("soluong", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnsoluong = new global::System.Data.DataColumn("soluong", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsoluong);
             }
             
@@ -1593,10 +1593,10 @@ namespace QuyetToanVCG_TDC_2021 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ngay {
+            public System.DateTime ngay {
                 get {
                     try {
-                        return ((string)(this[this.tabletbXangDau.ngayColumn]));
+                        return ((global::System.DateTime)(this[this.tabletbXangDau.ngayColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ngay\' in table \'tbXangDau\' is DBNull.", e);
@@ -1641,10 +1641,10 @@ namespace QuyetToanVCG_TDC_2021 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string soluong {
+            public double soluong {
                 get {
                     try {
-                        return ((string)(this[this.tabletbXangDau.soluongColumn]));
+                        return ((double)(this[this.tabletbXangDau.soluongColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'soluong\' in table \'tbXangDau\' is DBNull.", e);
