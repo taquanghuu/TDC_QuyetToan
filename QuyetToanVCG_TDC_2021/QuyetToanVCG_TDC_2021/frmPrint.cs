@@ -102,14 +102,17 @@ namespace QuyetToanVCG_TDC_2021
 
 
             DataTable dtxangdau = (DataTable)gridControl2.DataSource;
-           
-            //for (int i = 0; i < dtxangdau.Rows.Count; ++i)
-            //{
-            //    dtxangdau.Rows[i]["ngay"] = i + 1;
-            //}
-            WordUltil wd = new WordUltil(@"C:\Users\Public\Documents\DATA_TDC\_10_KeHoachSuDungXangDau.dot", true);
-            wd.WriteFields(dic);
-            wd.WriteTable(dtxangdau, 2);
+            if (dtxangdau.Rows.Count > 0)
+            {
+                WordUltil wd = new WordUltil(@"C:\Users\Public\Documents\DATA_TDC\_10_KeHoachSuDungXangDau.dot", true);
+                wd.WriteFields(dic);
+                wd.WriteTable(dtxangdau, 2);
+            }
+                //for (int i = 0; i < dtxangdau.Rows.Count; ++i)
+                //{
+                //    dtxangdau.Rows[i]["ngay"] = i + 1;
+                //}
+                
         }
         private void btPrint1_Click(object sender, EventArgs e)
         {
