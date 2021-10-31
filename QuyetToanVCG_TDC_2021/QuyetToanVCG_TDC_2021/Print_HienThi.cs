@@ -163,7 +163,35 @@ namespace QuyetToanVCG_TDC_2021
             documentViewer1.DocumentSource = xtr111;
 
         }
-        //
+
+        private void _13_PhuLuc_KeHoach_XangDau()
+        {
+            _13_PhuLucKeHoachSuDungXangDau xtr111 = new _13_PhuLucKeHoachSuDungXangDau();
+            clsDaTa cls = new clsDaTa();
+            DataTable dt3 = cls.tbHoiThao_SA_ID_HD(mid_hopdong);
+
+
+            DataSet_TDC ds = new DataSet_TDC();
+            ds.tbHoiThao.Clone();
+            ds.tbHoiThao.Clear();
+            for (int i = 0; i < dt3.Rows.Count; i++)
+            {
+                DataRow _ravi = ds.tbHoiThao.NewRow();
+                _ravi["STT"] = (i + 1).ToString();
+                _ravi["HoTen"] = dt3.Rows[i]["hoten_phuluchoithao"].ToString();
+                if (dt3.Rows[i]["tenchucvu"].ToString() == "Trợ lý KHQS")
+                    _ravi["ChucVu"] = "Trợ lý KHQS";
+                else _ravi["ChucVu"] = dt3.Rows[i]["chucvu_phuluchoithao"].ToString();
+                _ravi["CuongVi"] = dt3.Rows[i]["tenchucdanh"].ToString();
+                ds.tbHoiThao.Rows.Add(_ravi);
+            }
+            xtr111.DataSource = null;
+            xtr111.DataSource = ds.tbHoiThao;
+            xtr111.DataMember = "tbHoiThao";
+            xtr111.CreateDocument();
+            documentViewer1.DocumentSource = xtr111;
+
+        }
         private void Print_____()
         {
             if (mi_id_STT == 1) _1_Print_BangKeChungTuChiTieu();
@@ -172,6 +200,7 @@ namespace QuyetToanVCG_TDC_2021
             else if (mi_id_STT == 6) _6_PhuLuc_KeHoach_hoiThao_1();
             else if (mi_id_STT == 7) _7_DanhSachBoiDuong_HoiThao_1();
             else if (mi_id_STT == 8) _8_ToTrinh_hoiThao_1();
+            else if (mi_id_STT == 13) _13_PhuLuc_KeHoach_XangDau();
         }
         private void Print_HienThi_Load(object sender, EventArgs e)
         {

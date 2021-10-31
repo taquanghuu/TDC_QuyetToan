@@ -8,10 +8,16 @@ namespace QuyetToanVCG_TDC_2021
 {
     public partial class _13_PhuLucKeHoachSuDungXangDau : DevExpress.XtraReports.UI.XtraReport
     {
-        public _13_PhuLucKeHoachSuDungXangDau()
+        DateTime ngaykehoach_;
+        public _13_PhuLucKeHoachSuDungXangDau(DateTime xxngaykehoach)
         {
+            ngaykehoach_ = xxngaykehoach;
             InitializeComponent();
         }
 
+        private void PageHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            pngaythang.Value = "Kèm theo kế hoạch sử dụng xăng dầu số      /KH-ĐL ngày "+ngaykehoach_.ToString("dd/MM/yyyy")+"";
+        }
     }
 }

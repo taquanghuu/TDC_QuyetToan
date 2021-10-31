@@ -51,6 +51,7 @@
             this.xrTableCell10 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell11 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell12 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.pngaythang = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_TDC1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
@@ -85,6 +86,7 @@
             this.xrTable1});
             this.PageHeader.HeightF = 147.6212F;
             this.PageHeader.Name = "PageHeader";
+            this.PageHeader.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.PageHeader_BeforePrint);
             // 
             // xrLabel1
             // 
@@ -101,6 +103,8 @@
             // 
             // xrLabel2
             // 
+            this.xrLabel2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Parameters].[pngaythang]")});
             this.xrLabel2.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Italic);
             this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 48.00002F);
             this.xrLabel2.Multiline = true;
@@ -289,6 +293,11 @@
             this.xrTableCell12.StylePriority.UsePadding = false;
             this.xrTableCell12.Weight = 0.84225113449761135D;
             // 
+            // pngaythang
+            // 
+            this.pngaythang.Description = "ngày tháng";
+            this.pngaythang.Name = "pngaythang";
+            // 
             // _13_PhuLucKeHoachSuDungXangDau
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -301,6 +310,8 @@
             this.DataMember = "tbBangKeHoaDon";
             this.DataSource = this.dataSet_TDC1;
             this.Margins = new System.Drawing.Printing.Margins(100, 52, 100, 100);
+            this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
+            this.pngaythang});
             this.Version = "18.1";
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_TDC1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
@@ -334,5 +345,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell10;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell11;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell12;
+        private DevExpress.XtraReports.Parameters.Parameter pngaythang;
     }
 }
