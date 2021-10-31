@@ -182,14 +182,12 @@ namespace QuyetToanVCG_TDC_2021
             double xgiatrungthau = Convert.ToDouble(xdt.Compute("SUM(thanhtien1)", string.Empty));
             double xgianhaxanh2 = Convert.ToDouble(xdt.Compute("SUM(thanhtien2)", string.Empty));
             double xgianhaxanh3 = Convert.ToDouble(xdt.Compute("SUM(thanhtien3)", string.Empty));
-            txtgiatrungthau.Text = xgiatrungthau.ToString();
-            txtgianhaxanh2.Text = xgianhaxanh2.ToString();
-            txtgianhaxanh3.Text = xgianhaxanh2.ToString();
+           
             DataTable dt10 = cls3.tbNgayThang_SA_ID_HD_and_id_the_stt(mid_hopdong_, 20);
             DateTime ngaykhaosat = Convert.ToDateTime(dt10.Rows[0]["ngaythang"].ToString());
 
             clsSoTienBangChu cls4 = new clsSoTienBangChu();
-            string sotienbangchuxx = cls4.DocTienBangChu(xgiatrungthau, "đồng");
+            string sotienbangchuxx = cls4.DocTienBangChu(xgiatrungthau, " đồng");
 
             string stentotrinh = "Về việc phê duyệt nhà cung cấp vật tư hàng hoá thực hiện nhiệm vụ " + cls.sTenhopdong.Value + "";
             string sscancuhopdong = "" + cls.sSohopdong.Value + " ngày " + cls.daNgayhopdong.Value.ToString("dd/MM/yyyy") + " giữa Viện KT cơ giới quân sự và Cục TC-ĐL-CL về việc " + cls.sTenhopdong.Value.ToString() + "";
@@ -342,26 +340,6 @@ namespace QuyetToanVCG_TDC_2021
                 e.DisplayText = (e.RowHandle + 1).ToString();
         }
 
-        private void txtgiatrungthau_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-
-            }
-            catch
-            {
-
-            }
-        }
-
-        private void txtgianhaxanh2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtgianhaxanh3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+     
     }
 }
