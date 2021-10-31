@@ -168,7 +168,7 @@ namespace QuyetToanVCG_TDC_2021
         {
             _13_PhuLucKeHoachSuDungXangDau xtr111 = new _13_PhuLucKeHoachSuDungXangDau(mdangaythang);
             clsDaTa cls = new clsDaTa();
-            DataTable dt3 = cls.tbXangDau_SA_ID_HD(mid_hopdong);
+            DataTable dt3 = cls.tbPhuLuc_XangDau_SA_ID_HD(mid_hopdong);
             
             DataSet_TDC ds = new DataSet_TDC();
             ds.tbXangDau.Clone();

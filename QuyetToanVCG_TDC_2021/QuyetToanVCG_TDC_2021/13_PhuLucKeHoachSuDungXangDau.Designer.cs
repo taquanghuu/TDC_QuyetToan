@@ -52,6 +52,7 @@
             this.xrTableCell6 = new DevExpress.XtraReports.UI.XRTableCell();
             this.dataSet_TDC1 = new QuyetToanVCG_TDC_2021.DataSet_TDC();
             this.pngaythang = new DevExpress.XtraReports.Parameters.Parameter();
+            this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_TDC1)).BeginInit();
@@ -122,7 +123,7 @@
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[tbXangDau].[noidung]")});
             this.xrTableCell9.Multiline = true;
             this.xrTableCell9.Name = "xrTableCell9";
-            this.xrTableCell9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrTableCell9.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 2, 0, 0, 100F);
             this.xrTableCell9.StylePriority.UsePadding = false;
             this.xrTableCell9.StylePriority.UseTextAlignment = false;
             this.xrTableCell9.Text = "Nội dung";
@@ -300,13 +301,19 @@
             this.pngaythang.Description = "ngày tháng";
             this.pngaythang.Name = "pngaythang";
             // 
+            // PageFooter
+            // 
+            this.PageFooter.HeightF = 41.66667F;
+            this.PageFooter.Name = "PageFooter";
+            // 
             // _13_PhuLucKeHoachSuDungXangDau
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.Detail,
             this.TopMargin,
             this.BottomMargin,
-            this.PageHeader});
+            this.PageHeader,
+            this.PageFooter});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.dataSet_TDC1});
             this.DataMember = "tbBangKeHoaDon";
@@ -348,5 +355,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell11;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell12;
         private DevExpress.XtraReports.Parameters.Parameter pngaythang;
+        private DevExpress.XtraReports.UI.PageFooterBand PageFooter;
     }
 }
