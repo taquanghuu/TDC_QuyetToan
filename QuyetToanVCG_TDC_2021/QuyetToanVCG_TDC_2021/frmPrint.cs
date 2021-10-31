@@ -77,23 +77,32 @@ namespace QuyetToanVCG_TDC_2021
             cls.iId_hopdong = mid_hopdong_;
             DataTable dt = cls.SelectOne();
 
-            string sstenquyetdinh = "Phê duyệt Kế hoạch hội thảo thông qua quy trình " + cls.sTenhopdong.Value + "";
-            string sscancuhopdong = "Căn cứ vào hợp đồng số " + cls.sSohopdong.Value + " ngày " + cls.daNgayhopdong.Value.ToString("dd/MM/yyyy") + " giữa Viện KT cơ giới quân sự và Cục TC-ĐL-CL về việc " + cls.sTenhopdong.Value.ToString() + "";
-            string ssdieu1 = "Phê duyệt Kế hoạch Hội thảo thông qua quy trình " + cls.sTenhopdong.Value + "";
+            string stenkehoach = "Phục vụ " + cls.sTenhopdong.Value + "";
+            string shopdong = "Căn cứ vào hợp đồng số " + cls.sSohopdong.Value + " ngày " + cls.daNgayhopdong.Value.ToString("dd/MM/yyyy") + " giữa Viện KT cơ giới quân sự và Cục TC-ĐL-CL về việc " + cls.sTenhopdong.Value.ToString() + ";";
+            string ssoluong = "Phòng Đo lường - Thí nghiệm kính đề nghị Viện trưởng Viện KT cơ giới quân sự phê duyệt Kế hoạch Hội thảo thông qua quy trình " + cls.sTenhopdong.Value + "./.";
 
-
-
+         
+            string sdiadiem = cls.sGhiChu.Value;
+           clsDaTa cls2 = new clsDaTa();
+            DataTable dttungay = cls2.tbNgayThang_SA_ID_HD_and_id_the_stt(mid_hopdong_, 11);
+            DataTable dtdenngay = cls2.tbNgayThang_SA_ID_HD_and_id_the_stt(mid_hopdong_, 12);
+            DateTime xtungay = Convert.ToDateTime(dttungay.Rows[0]["ngaythang"].ToString());
+            DateTime xdenngay = Convert.ToDateTime(dtdenngay.Rows[0]["ngaythang"].ToString());
+          
+            string sthoigian = "Từ ngày " + xtungay.ToString("dd/MM/yyyy") + " đến ngày  " + xdenngay.ToString("dd/MM/yyyy") + "";
             Dictionary<string, string> dic = new Dictionary<string, string>();
-            dic.Add("tenquyetdinh", sstenquyetdinh);//           
-            dic.Add("cancuhopdong", sscancuhopdong);//
-            dic.Add("dieu1", ssdieu1);//
+            dic.Add("tenkehoach", stenkehoach);//
+            dic.Add("ngay", xngayxx.ToString("dd"));//
+            dic.Add("thang", xngayxx.ToString("MM"));//
+            dic.Add("nam", xngayxx.ToString("yyyy"));//         //
+            dic.Add("thoigian", sthoigian);//
+            dic.Add("diadiem", sdiadiem);//
+            dic.Add("hopdong", shopdong);//
+            dic.Add("soluong", ssoluong);//
 
 
-
-            WordUltil wd = new WordUltil(@"C:\Users\Public\Documents\DATA_TDC\_9_QuyetDinhPheDuyet_HoiThao_1.dot", true);
+            WordUltil wd = new WordUltil(@"C:\Users\Public\Documents\DATA_TDC\_10_KeHoachSuDungXangDau.dot", true);
             wd.WriteFields(dic);
-
-            //MessageBox.Show("Đã xong");
         }
         private void btPrint1_Click(object sender, EventArgs e)
         {

@@ -133,6 +133,7 @@
     <Compile Include="clsTbngaythang.cs" />
     <Compile Include="clsTbnhacungcap.cs" />
     <Compile Include="clsTbnhansu.cs" />
+    <Compile Include="clsTbPhuLuc_XangDau.cs" />
     <Compile Include="clsTbPrint.cs" />
     <Compile Include="clsTbvthh.cs" />
     <Compile Include="DataSet_TDC.Designer.cs">
