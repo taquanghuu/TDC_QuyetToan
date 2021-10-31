@@ -10,6 +10,39 @@ namespace QuyetToanVCG_TDC_2021
 {
     public partial class clsDaTa : clsDBInteractionBase
     {
+        public DataTable tbBangKe_SA_id_hopdong_W_id_loaihoadon(int xid_hopdong_, int xid_loaihoadon)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[tbBangKe_SA_id_hopdong_W_id_loaihoadon]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("tbBangKe_SA_id_hopdong_W_id_loaihoadon");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@_id_hopdong", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, xid_hopdong_));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@_id_loaihoadon", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, xid_loaihoadon));
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("tbBangKe_SA_id_hopdong_W_id_loaihoadon", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
         public DataTable tbvthh_SO_TenVTHH(string xtenvthh)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();

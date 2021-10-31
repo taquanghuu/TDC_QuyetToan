@@ -196,7 +196,7 @@ namespace QuyetToanVCG_TDC_2021
             clsDaTa cls = new clsDaTa();
             DataTable dt3 = cls.tbXangDau_SA_ID_HD(mid_hopdong);
             double xtongtien__ = Convert.ToDouble(dt3.Compute("SUM(thanhtien)", string.Empty));
-            _15_PhieuGiaoNhan_Xang xtr111 = new _15_PhieuGiaoNhan_Xang(mdangaythang, xtongtien__);
+            _15_PhieuGiaoNhan_Xang xtr111 = new _15_PhieuGiaoNhan_Xang(mid_hopdong,1, mdangaythang, xtongtien__);
 
        
             DataSet_TDC ds = new DataSet_TDC();
@@ -256,7 +256,7 @@ namespace QuyetToanVCG_TDC_2021
             clsDaTa cls = new clsDaTa();
             DataTable dt3 = cls.tbVPP_SA_ID_HD(mid_hopdong);
             double xtongtien__ = Convert.ToDouble(dt3.Compute("SUM(thanhtien)", string.Empty));
-            _15_PhieuGiaoNhan_Xang xtr111 = new _15_PhieuGiaoNhan_Xang(mdangaythang, xtongtien__);
+            _15_PhieuGiaoNhan_Xang xtr111 = new _15_PhieuGiaoNhan_Xang(mid_hopdong, 5, mdangaythang, xtongtien__);
 
 
             DataSet_TDC ds = new DataSet_TDC();
