@@ -336,7 +336,7 @@ namespace QuyetToanVCG_TDC_2021
                 adapter = new OleDbDataAdapter(str_adapter, con);
                 adapter.Fill(dt);
                 DataTable dt2 = new DataTable();
-
+                dt2.Columns.Add("id_baogia", typeof(string));
                 dt2.Columns.Add("id_vthh", typeof(int));
                 dt2.Columns.Add("soluong", typeof(int));
                 dt2.Columns.Add("dongia1", typeof(double));
@@ -347,8 +347,8 @@ namespace QuyetToanVCG_TDC_2021
 
                 dt2.Columns.Add("dongia3", typeof(double));
                 dt2.Columns.Add("thanhtien3", typeof(double));
+                dt2.Columns.Add("tontai", typeof(bool));
 
-           
                 clsTbvthh cls1 = new clsTbvthh();
                 clsDaTa cls2 = new clsDaTa();
                 for (int i = 0; i < dt.Rows.Count; i++)
@@ -369,6 +369,7 @@ namespace QuyetToanVCG_TDC_2021
                         id_vthh__ = cls1.iId_vthh.Value;
                     }
                     DataRow _ravi = dt2.NewRow();
+                    _ravi["id_baogia"] = "";
                     _ravi["id_vthh"] = id_vthh__;
                     _ravi["soluong"] = 1;
                     _ravi["dongia1"] = 0;
@@ -377,7 +378,7 @@ namespace QuyetToanVCG_TDC_2021
                     _ravi["thanhtien2"] = 0;
                     _ravi["dongia3"] = 0;
                     _ravi["thanhtien3"] = 0;
-                    
+                    _ravi["tontai"] = true;
                     dt2.Rows.Add(_ravi);
                   
                 }

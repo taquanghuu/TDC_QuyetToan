@@ -191,7 +191,7 @@ namespace QuyetToanVCG_TDC_2021
 
         }
 
-        private void _15_Print_PhieuGiaoNHanVTHH()
+        private void _16_Print_PhieuGiaoNHanVTHH()
         {
             clsDaTa cls = new clsDaTa();
             DataTable dt3 = cls.tbXangDau_SA_ID_HD(mid_hopdong);
@@ -206,7 +206,7 @@ namespace QuyetToanVCG_TDC_2021
             {
                 DataRow _ravi = ds.tbvthh.NewRow();
                 _ravi["STT"] = (i + 1).ToString();
-                _ravi["tenvthh"] = Convert.ToDateTime(dt3.Rows[i]["tenvthh"].ToString());
+                _ravi["tenvthh"] = dt3.Rows[i]["tenvthh"].ToString();
                 _ravi["donvitinh"] = dt3.Rows[i]["donvitinh"].ToString();
                 _ravi["soluong"] = Convert.ToDouble(dt3.Rows[i]["soluong"].ToString());
                 _ravi["dongia"] = Convert.ToDouble(dt3.Rows[i]["dongia"].ToString());
@@ -229,7 +229,7 @@ namespace QuyetToanVCG_TDC_2021
             else if (mi_id_STT == 7) _7_DanhSachBoiDuong_HoiThao_1();
             else if (mi_id_STT == 8) _8_ToTrinh_hoiThao_1();
             else if (mi_id_STT == 13) _13_PrintPhuLuc_KeHoach_XangDau();
-            else if (mi_id_STT == 15) _15_Print_PhieuGiaoNHanVTHH();
+            else if (mi_id_STT == 16) _16_Print_PhieuGiaoNHanVTHH();
         }
         private void Print_HienThi_Load(object sender, EventArgs e)
         {
