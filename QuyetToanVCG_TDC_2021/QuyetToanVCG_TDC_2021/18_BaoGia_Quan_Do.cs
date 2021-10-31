@@ -10,7 +10,7 @@ namespace QuyetToanVCG_TDC_2021
     {
         DateTime ngaythang_;
         double tongsotien_;
-        int mid_hopdong_;
+        int mid_hopdong_, mid_font;
         public _18_BaoGia_Quan_Do(int xid_hd_, DateTime ngay, double xtongtien)
         {
             mid_hopdong_ = xid_hd_;
@@ -20,13 +20,14 @@ namespace QuyetToanVCG_TDC_2021
         }
         private void Chon_Font_Chu()
         {
-            //clsTbmafontchu cls = new clsTbmafontchu();
-            //cls.iId_mafontchu = mid_font;
-            //DataTable dt= cls.SelectOne();
-            //string tenfont = cls.sMafont.Value;
-            //bool innghien = cls.bInnghieng.Value;
-            //xrLabel10.Font= new Font(""+ tenfont + "",26);
+            clsTbmafontchu cls = new clsTbmafontchu();
+            cls.iId_mafontchu = mid_font;
+            DataTable dt = cls.SelectOne();
+            string tenfont = cls.sMafont.Value;
+            bool innghien = cls.bInnghieng.Value;
+            xrLabel10.Font = new Font("" + tenfont + "", 26, FontStyle.Underline);
 
+            xrLabel10.Font = new Font("" + tenfont + "", 26, FontStyle.Italic);
         }
         private void PageHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {

@@ -193,6 +193,7 @@
             // 
             // TopMargin
             // 
+            this.TopMargin.HeightF = 66.66666F;
             this.TopMargin.Name = "TopMargin";
             this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -244,7 +245,7 @@
             this.xrLabel4.StylePriority.UseFont = false;
             this.xrLabel4.StylePriority.UseTextAlignment = false;
             this.xrLabel4.Text = "Địa chỉ: Vị trí 171 Phố Tô Hiệu, P.Dịch Vọng, Q.Cầu Giấy, Tp. Hà Nội";
-            this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             // 
             // xrLabel2
             // 
@@ -286,7 +287,7 @@
             this.xrLabel10.StylePriority.UseFont = false;
             this.xrLabel10.StylePriority.UseTextAlignment = false;
             this.xrLabel10.Text = "GIA NHƯ";
-            this.xrLabel10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            this.xrLabel10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             // 
             // xrTable1
             // 
@@ -605,7 +606,7 @@
             this.dataSet_TDC1});
             this.DataMember = "tbBangKeHoaDon";
             this.DataSource = this.dataSet_TDC1;
-            this.Margins = new System.Drawing.Printing.Margins(107, 55, 100, 100);
+            this.Margins = new System.Drawing.Printing.Margins(107, 55, 67, 100);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.ptencuahang,
             this.pdiachi_masothue,
