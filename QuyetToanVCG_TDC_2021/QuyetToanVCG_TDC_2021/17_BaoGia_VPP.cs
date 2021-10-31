@@ -29,7 +29,7 @@ namespace QuyetToanVCG_TDC_2021
             ptencuahang.Value = ""+ stennccx + "";
             pdiachi_masothue.Value = "Địa chỉ: "+sdiachix+"\n Mã số thuế: "+smasothuex+"";
             pngaythang.Value= "Ngày " + ngaythang_.ToString("dd") + " tháng " + ngaythang_.ToString("MM") + " năm " + ngaythang_.ToString("yyyy") + "";
-
+            pnguoibaogia.Value = dt.Rows[0]["nguoibaogia"].ToString();
             clsSoTienBangChu cls2 = new QuyetToanVCG_TDC_2021.clsSoTienBangChu();
             ptongsotien.Value = tongsotien_;
             psotienbangchu.Value = "Bằng chữ: " + cls2.DocTienBangChu(tongsotien_, " đồng ./.") + "";
