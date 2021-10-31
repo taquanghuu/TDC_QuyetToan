@@ -80,6 +80,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="13_PhuLucKeHoachSuDungXangDau.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="13_PhuLucKeHoachSuDungXangDau.Designer.cs">
+      <DependentUpon>13_PhuLucKeHoachSuDungXangDau.cs</DependentUpon>
+    </Compile>
     <Compile Include="1_BangKeChungTuChiTieu.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -192,6 +198,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WordUltil.cs" />
+    <EmbeddedResource Include="13_PhuLucKeHoachSuDungXangDau.resx">
+      <DependentUpon>13_PhuLucKeHoachSuDungXangDau.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="1_BangKeChungTuChiTieu.resx">
       <DependentUpon>1_BangKeChungTuChiTieu.cs</DependentUpon>
     </EmbeddedResource>
