@@ -289,5 +289,15 @@ namespace QuyetToanVCG_TDC_2021
         {
             gridView_NgayThang.SetFocusedRowCellValue(clCheck_In_An, true);
         }
+
+        private void linkVPP_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void linkXangDau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }
