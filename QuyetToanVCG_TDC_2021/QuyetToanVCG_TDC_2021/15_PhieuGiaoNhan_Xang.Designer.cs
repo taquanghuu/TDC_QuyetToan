@@ -83,7 +83,7 @@
             this.xrTableCell16 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell17 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell18 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.tongsotien = new DevExpress.XtraReports.Parameters.Parameter();
+            this.ptongsotien = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_TDC1)).BeginInit();
@@ -229,6 +229,7 @@
             this.xrTable1});
             this.PageHeader.HeightF = 274.4813F;
             this.PageHeader.Name = "PageHeader";
+            this.PageHeader.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.PageHeader_BeforePrint);
             // 
             // xrLabel11
             // 
@@ -723,12 +724,12 @@
             this.xrTableCell18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.xrTableCell18.Weight = 1.1554488490491206D;
             // 
-            // tongsotien
+            // ptongsotien
             // 
-            this.tongsotien.Description = "tổng tiền";
-            this.tongsotien.Name = "tongsotien";
-            this.tongsotien.Type = typeof(int);
-            this.tongsotien.ValueInfo = "0";
+            this.ptongsotien.Description = "tổng tiền";
+            this.ptongsotien.Name = "ptongsotien";
+            this.ptongsotien.Type = typeof(int);
+            this.ptongsotien.ValueInfo = "0";
             // 
             // _15_PhieuGiaoNhan_Xang
             // 
@@ -749,7 +750,7 @@
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.ptenhoadon,
             this.pngaythang,
-            this.tongsotien});
+            this.ptongsotien});
             this.Version = "18.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
@@ -816,6 +817,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell16;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell17;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell18;
-        private DevExpress.XtraReports.Parameters.Parameter tongsotien;
+        private DevExpress.XtraReports.Parameters.Parameter ptongsotien;
     }
 }
