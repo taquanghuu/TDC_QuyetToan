@@ -158,6 +158,70 @@ namespace QuyetToanVCG_TDC_2021
             //MessageBox.Show("Đã xong");
         }
 
+        private void _21_Print_ToTrinh_CHoTroi_ChiDinhThau(DateTime xngayxx)
+        {
+            clsTbhopdong cls = new QuyetToanVCG_TDC_2021.clsTbhopdong();
+            cls.iId_hopdong = mid_hopdong_;
+            DataTable dt = cls.SelectOne();
+
+            clsDaTa cls2 = new clsDaTa();
+            DataTable dt2 = cls2.Tbbaogia_DanhSach_NCC_Cho_SA_ID_HD_TrungThau(mid_hopdong_);
+            string sscuahangtrungthau = dt2.Rows[0]["tennhacungcap"].ToString();
+            string ssdiachi = dt2.Rows[0]["diachi"].ToString().Trim();
+
+            DataTable dt3 = cls2.Tbbaogia_DanhSach_NCC_Cho_SA_ID_HD_Phu2(mid_hopdong_);
+            string nhaxanh2 = dt3.Rows[0]["tennhacungcap"].ToString();
+            string ssdiachi_nhaxanh2 = dt3.Rows[0]["diachi"].ToString().Trim();
+
+            DataTable dt4 = cls2.Tbbaogia_DanhSach_NCC_Cho_SA_ID_HD_Phu3(mid_hopdong_);
+            string nhaxanh3 = dt4.Rows[0]["tennhacungcap"].ToString();
+            string ssdiachi_nhaxanh3 = dt4.Rows[0]["diachi"].ToString().Trim();
+
+            clsDaTa cls3 = new clsDaTa();
+            DataTable xdt = cls3.tbbaogia_SA_id_HD(mid_hopdong_);
+            double xgiatrungthau = Convert.ToDouble(xdt.Compute("SUM(thanhtien1)", string.Empty));
+            double xgianhaxanh2 = Convert.ToDouble(xdt.Compute("SUM(thanhtien2)", string.Empty));
+            double xgianhaxanh3 = Convert.ToDouble(xdt.Compute("SUM(thanhtien3)", string.Empty));
+            txtgiatrungthau.Text = xgiatrungthau.ToString();
+            txtgianhaxanh2.Text = xgianhaxanh2.ToString();
+            txtgianhaxanh3.Text = xgianhaxanh2.ToString();
+            DataTable dt10 = cls3.tbNgayThang_SA_ID_HD_and_id_the_stt(mid_hopdong_, 20);
+            DateTime ngaykhaosat = Convert.ToDateTime(dt10.Rows[0]["ngaythang"].ToString());
+
+            clsSoTienBangChu cls4 = new clsSoTienBangChu();
+            string sotienbangchuxx = cls4.DocTienBangChu(xgiatrungthau, "đồng");
+
+            string stentotrinh = "Về việc phê duyệt nhà cung cấp vật tư hàng hoá thực hiện nhiệm vụ " + cls.sTenhopdong.Value + "";
+            string sscancuhopdong = "" + cls.sSohopdong.Value + " ngày " + cls.daNgayhopdong.Value.ToString("dd/MM/yyyy") + " giữa Viện KT cơ giới quân sự và Cục TC-ĐL-CL về việc " + cls.sTenhopdong.Value.ToString() + "";
+            string sstenhopdong = "" + cls.sTenhopdong.Value + "";
+
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+            dic.Add("tentotrinh", stentotrinh);//
+            dic.Add("cancuhopdong", sscancuhopdong);//
+            dic.Add("tenhopdong", sstenhopdong);//
+            dic.Add("ngaykhaosat", ngaykhaosat.ToString("dd/MM/yyyy"));//
+            dic.Add("nhatrungthau", sscuahangtrungthau);// 
+                     
+            dic.Add("nhaxanh2", nhaxanh2);//
+            dic.Add("nhaxanh3", nhaxanh3);//
+            dic.Add("diachi1", ssdiachi);//
+
+            dic.Add("diachi2", ssdiachi_nhaxanh2);//
+            dic.Add("diachi3", ssdiachi_nhaxanh3);//
+            dic.Add("giatrungthau", xgiatrungthau.ToString("#,##0"));//
+            dic.Add("gianhaxanh2", xgianhaxanh2.ToString("#,##0"));//    
+            dic.Add("gianhaxanh3", xgianhaxanh3.ToString("#,##0"));//  
+            dic.Add("tienbangchu", sotienbangchuxx);//  
+            dic.Add("ngay", xngayxx.ToString("dd"));//
+            dic.Add("thang", xngayxx.ToString("MM"));//
+            dic.Add("nam", xngayxx.ToString("yyyy"));//         
+
+
+            WordUltil wd = new WordUltil(@"C:\Users\Public\Documents\DATA_TDC\_21_ToTrinh_ChoTroi.dot", true);
+            wd.WriteFields(dic);
+
+            //MessageBox.Show("Đã xong");
+        }
         private void Print_KeHoachSuDung_XangDau(DateTime xngayxx)
         {
             clsTbhopdong cls = new QuyetToanVCG_TDC_2021.clsTbhopdong();
@@ -221,6 +285,8 @@ namespace QuyetToanVCG_TDC_2021
                     _15_Print_QuyetDinh_XangDau(xngay);
                 else if (xid == 20)
                     _20_Print_BBKS(xngay);
+                else if (xid == 21)
+                    _21_Print_ToTrinh_CHoTroi_ChiDinhThau(xngay);
                 else
                 {
                     Print_HienThi ff = new Print_HienThi(xid, mid_hopdong_, xngay);
@@ -274,6 +340,28 @@ namespace QuyetToanVCG_TDC_2021
         {
             if (e.Column == clSTT2)
                 e.DisplayText = (e.RowHandle + 1).ToString();
+        }
+
+        private void txtgiatrungthau_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void txtgianhaxanh2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtgianhaxanh3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
