@@ -207,6 +207,9 @@
     <EmbeddedResource Include="13_PhuLucKeHoachSuDungXangDau.resx">
       <DependentUpon>13_PhuLucKeHoachSuDungXangDau.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="15_PhieuGiaoNhan_Xang.resx">
+      <DependentUpon>15_PhieuGiaoNhan_Xang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="1_BangKeChungTuChiTieu.resx">
       <DependentUpon>1_BangKeChungTuChiTieu.cs</DependentUpon>
     </EmbeddedResource>
