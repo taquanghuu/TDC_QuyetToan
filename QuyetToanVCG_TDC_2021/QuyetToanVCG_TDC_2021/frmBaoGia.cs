@@ -1,7 +1,9 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -283,6 +285,12 @@ namespace QuyetToanVCG_TDC_2021
         {
             Load_lockup();
             Load_DaTa();
+            cldongia1.Caption = "Đơn\ngiá 1";
+            clthanhtien1.Caption = "Thành\ntiền 1";
+            cldongia2.Caption = "Đơn\ngiá 2";
+            clthanhtien2.Caption = "Thành\ntiền 2";
+            cldongia3.Caption = "Đơn\ngiá 3";
+            clthanhtien3.Caption = "Thành\ntiền 3";
         }
 
         private void txtSoTien_TextChanged(object sender, EventArgs e)
@@ -325,7 +333,6 @@ namespace QuyetToanVCG_TDC_2021
                
                 double dongia_3_ = 0;
                 double thanhtien_3_ = 0;
-
                 if (e.Column == clsoluong)
                 {
                     dongia_1_ = CheckString.ConvertToDouble_My(gridView_Cho.GetFocusedRowCellValue(cldongia1));
@@ -441,6 +448,63 @@ namespace QuyetToanVCG_TDC_2021
         {
             frmPrint ff = new frmPrint(mid_hopdong_);
             ff.Show();
+        }
+        private void insert_vthh()
+        {
+            OpenFileDialog f = new OpenFileDialog();
+            f.Filter = "File (*.xls)|*.xls";
+            f.Multiselect = false;
+            f.Title = "Chon CSDL";
+            // f.InitialDirectory = @"Local\Libraries\Documents\QLKH:";
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                clsTbvthh cls = new clsTbvthh();
+
+                OleDbConnection con = new OleDbConnection();
+                string Tenfile_Execl;
+                DataTable dt = new DataTable();
+                DataTable dtNganhang = new DataTable();
+                Tenfile_Execl = f.FileName;
+                string str_con = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + Tenfile_Execl + ";Extended Properties=Excel 8.0";
+                con = new OleDbConnection(str_con);
+                con.Open();
+
+
+                OleDbDataAdapter adapter = new OleDbDataAdapter();
+                string str_adapter = "Select * from [Sheet1$]";
+                adapter = new OleDbDataAdapter(str_adapter, con);
+                adapter.Fill(dt);
+
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    cls.sTenvthh = dt.Rows[i][0].ToString();
+                    cls.sDonvitinh = dt.Rows[i][1].ToString();
+                    cls.bKhoa = true;
+                    cls.Insert();
+                }
+                MessageBox.Show("đã xong");
+            }
+        }
+        private void btExcel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //string tenvthh_cho, dvt_vthh_cho;
+        //int id_vthh_cho;
+        private void search_mahang_cho_EditValueChanged(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    DataRow row = ((DataRowView)((SearchLookUpEdit)sender).GetSelectedDataRow()).Row;
+            //    id_vthh_cho = CheckString.ConvertTo_Int_My(row["id_vthh"].ToString());
+            //    tenvthh_cho = row["tenvthh"].ToString();
+            //    dvt_vthh_cho = row["donvitinh"].ToString();
+            //}
+            //catch (Exception ea)
+            //{
+            //    MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
     }
 }
