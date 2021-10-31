@@ -74,9 +74,11 @@
             this.ptongsotien = new DevExpress.XtraReports.Parameters.Parameter();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.pngaythang = new DevExpress.XtraReports.Parameters.Parameter();
+            this.dataSet_TDC1 = new QuyetToanVCG_TDC_2021.DataSet_TDC();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_TDC1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -113,6 +115,7 @@
             this.xrLabel5});
             this.PageHeader.HeightF = 335.9485F;
             this.PageHeader.Name = "PageHeader";
+            this.PageHeader.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.PageHeader_BeforePrint);
             // 
             // xrTable1
             // 
@@ -566,6 +569,11 @@
             this.pngaythang.Description = "ngày lập";
             this.pngaythang.Name = "pngaythang";
             // 
+            // dataSet_TDC1
+            // 
+            this.dataSet_TDC1.DataSetName = "DataSet_TDC";
+            this.dataSet_TDC1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // _17_BaoGia_VPP
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -574,6 +582,10 @@
             this.BottomMargin,
             this.PageHeader,
             this.ReportFooter});
+            this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
+            this.dataSet_TDC1});
+            this.DataMember = "tbBangKeHoaDon";
+            this.DataSource = this.dataSet_TDC1;
             this.Margins = new System.Drawing.Printing.Margins(100, 58, 20, 100);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.ptencuahang,
@@ -586,6 +598,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_TDC1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -638,5 +651,6 @@
         private DevExpress.XtraReports.Parameters.Parameter psotienbangchu;
         private DevExpress.XtraReports.Parameters.Parameter ptongsotien;
         private DevExpress.XtraReports.Parameters.Parameter pngaythang;
+        private DataSet_TDC dataSet_TDC1;
     }
 }
