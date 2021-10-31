@@ -29,10 +29,11 @@ namespace QuyetToanVCG_TDC_2021
 
             xrLabel10.Font = new Font("" + tenfont + "", 26, FontStyle.Italic);
         }
-        private void PageHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+
+        private void ReportHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
             clsDaTa cls = new clsDaTa();
-            DataTable dt = cls.tbVPP_SA_ID_HD(mid_hopdong_);
+            DataTable dt = cls.Tbbaogia_DanhSach_NCC_Cho_SA_ID_HD_TrungThau(mid_hopdong_);
             string stennccx = dt.Rows[0]["tennhacungcap"].ToString();
             string sdiachix = dt.Rows[0]["diachi"].ToString();
             string smasothuex = dt.Rows[0]["masothue"].ToString();
@@ -43,6 +44,11 @@ namespace QuyetToanVCG_TDC_2021
             clsSoTienBangChu cls2 = new QuyetToanVCG_TDC_2021.clsSoTienBangChu();
             ptongsotien.Value = tongsotien_;
             psotienbangchu.Value = "Bằng chữ: " + cls2.DocTienBangChu(tongsotien_, " đồng ./.") + "";
+        }
+
+        private void PageHeader_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+         
         }
     }
 }

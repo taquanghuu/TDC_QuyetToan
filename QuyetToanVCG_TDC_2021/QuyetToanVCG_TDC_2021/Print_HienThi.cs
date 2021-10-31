@@ -285,7 +285,7 @@ namespace QuyetToanVCG_TDC_2021
         {
             clsDaTa cls = new clsDaTa();
             DataTable dt3 = cls.tbbaogia_SA_id_HD(mid_hopdong);
-            double xtongtien__ = Convert.ToDouble(dt3.Compute("SUM(thanhtien)", string.Empty));
+            double xtongtien__ = Convert.ToDouble(dt3.Compute("SUM(thanhtien1)", string.Empty));
             _18_BaoGia_Quan_Do xtr111 = new _18_BaoGia_Quan_Do(mid_hopdong, mdangaythang, xtongtien__);
 
 
@@ -299,8 +299,8 @@ namespace QuyetToanVCG_TDC_2021
                 _ravi["tenvthh"] = dt3.Rows[i]["tenvthh"].ToString();
                 _ravi["donvitinh"] = dt3.Rows[i]["donvitinh"].ToString();
                 _ravi["soluong"] = Convert.ToDouble(dt3.Rows[i]["soluong"].ToString());
-                _ravi["dongia"] = Convert.ToDouble(dt3.Rows[i]["dongia"].ToString());
-                _ravi["thanhtien"] = Convert.ToDouble(dt3.Rows[i]["thanhtien"].ToString());
+                _ravi["dongia"] = Convert.ToDouble(dt3.Rows[i]["dongia1"].ToString());
+                _ravi["thanhtien"] = Convert.ToDouble(dt3.Rows[i]["thanhtien1"].ToString());
                 ds.tbvthh.Rows.Add(_ravi);
             }
             xtr111.DataSource = null;
