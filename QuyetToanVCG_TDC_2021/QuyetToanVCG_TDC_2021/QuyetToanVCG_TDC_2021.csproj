@@ -65,10 +65,14 @@
       <HintPath>I:\Microsoft.Office.Interop.Word.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -165,6 +169,18 @@
     <Compile Include="frmBaoGia.Designer.cs">
       <DependentUpon>frmBaoGia.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBaoGia_VPP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaoGia_VPP.Designer.cs">
+      <DependentUpon>frmBaoGia_VPP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBaoGia_XangDau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaoGia_XangDau.Designer.cs">
+      <DependentUpon>frmBaoGia_XangDau.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmChiTietHopDong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +249,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBaoGia.resx">
       <DependentUpon>frmBaoGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBaoGia_VPP.resx">
+      <DependentUpon>frmBaoGia_VPP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBaoGia_XangDau.resx">
+      <DependentUpon>frmBaoGia_XangDau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChiTietHopDong.resx">
       <DependentUpon>frmChiTietHopDong.cs</DependentUpon>

@@ -292,12 +292,14 @@ namespace QuyetToanVCG_TDC_2021
 
         private void linkVPP_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            frmBaoGia_VPP ff = new frmBaoGia_VPP(mid_hopdong_);
+            ff.Show();
         }
 
         private void linkXangDau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            frmBaoGia_XangDau ff = new frmBaoGia_XangDau(mid_hopdong_);
+            ff.Show();
         }
     }
 }

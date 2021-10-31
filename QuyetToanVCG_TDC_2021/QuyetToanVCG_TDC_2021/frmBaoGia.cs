@@ -202,6 +202,7 @@ namespace QuyetToanVCG_TDC_2021
             Luu_duLieu_BaoGia_VPP();
             Luu_duLieu_BaoGia_XangDau();
             MessageBox.Show("Đã lưu");
+            Load_DaTa();
         }
         private void Load_lockup()
         {
@@ -490,8 +491,7 @@ namespace QuyetToanVCG_TDC_2021
 
         }
 
-        //string tenvthh_cho, dvt_vthh_cho;
-        //int id_vthh_cho;
+    
         private void search_mahang_cho_EditValueChanged(object sender, EventArgs e)
         {
             //try
@@ -505,6 +505,11 @@ namespace QuyetToanVCG_TDC_2021
             //{
             //    MessageBox.Show("Lỗi: ... " + ea.Message.ToString(), "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //}
+        }
+
+        private void btThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
