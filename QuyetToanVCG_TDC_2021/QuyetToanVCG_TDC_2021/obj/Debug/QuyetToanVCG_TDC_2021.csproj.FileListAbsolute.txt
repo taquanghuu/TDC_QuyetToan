@@ -777,3 +777,4 @@ C:\TDC\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\obj\Debug\QuyetToanVCG_TDC_20
 C:\TDC\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\obj\Debug\QuyetToanVCG_TDC_2021.csproj.GenerateResource.Cache
 C:\TDC\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\obj\Debug\QuyetToanVCG_TDC_2021.exe.licenses
 C:\TDC\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\obj\Debug\QuyetToanVCG_TDC_2021._8_ToTrinhPheDuyet_HoiThao_1.resources
+C:\TDC\QuyetToanVCG_TDC_2021\QuyetToanVCG_TDC_2021\obj\Debug\QuyetToanVCG_TDC_2021._13_PhuLucKeHoachSuDungXangDau.resources

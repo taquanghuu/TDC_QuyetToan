@@ -164,13 +164,12 @@ namespace QuyetToanVCG_TDC_2021
 
         }
 
-        private void _13_PhuLuc_KeHoach_XangDau()
+        private void _13_PrintPhuLuc_KeHoach_XangDau()
         {
             _13_PhuLucKeHoachSuDungXangDau xtr111 = new _13_PhuLucKeHoachSuDungXangDau(mdangaythang);
             clsDaTa cls = new clsDaTa();
             DataTable dt3 = cls.tbXangDau_SA_ID_HD(mid_hopdong);
-
-
+            
             DataSet_TDC ds = new DataSet_TDC();
             ds.tbXangDau.Clone();
             ds.tbXangDau.Clear();
@@ -199,7 +198,7 @@ namespace QuyetToanVCG_TDC_2021
             else if (mi_id_STT == 6) _6_PhuLuc_KeHoach_hoiThao_1();
             else if (mi_id_STT == 7) _7_DanhSachBoiDuong_HoiThao_1();
             else if (mi_id_STT == 8) _8_ToTrinh_hoiThao_1();
-            else if (mi_id_STT == 13) _13_PhuLuc_KeHoach_XangDau();
+            else if (mi_id_STT == 13) _13_PrintPhuLuc_KeHoach_XangDau();
         }
         private void Print_HienThi_Load(object sender, EventArgs e)
         {
