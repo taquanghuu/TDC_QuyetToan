@@ -10,6 +10,41 @@ namespace QuyetToanVCG_TDC_2021
 {
     public partial class clsDaTa : clsDBInteractionBase
     {
+        public DataTable tbDuToan_ben_Cuc_SA_ID_HD(int xid_hopdong_)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[tbDuToan_ben_Cuc_SA_ID_HD]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("tbDuToan_ben_Cuc_SA_ID_HD");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_batdau", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_batdau));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_ketthuc", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_ketthuc));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@_id_hopdong", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, xid_hopdong_));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@SoDong", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, sodong_));
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("tbDuToan_ben_Cuc_SA_ID_HD", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
         public DataTable tbBangKe_SA_id_hopdong_W_id_loaihoadon(int xid_hopdong_, int xid_loaihoadon)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
@@ -392,6 +427,7 @@ namespace QuyetToanVCG_TDC_2021
                 scmCmdToExecute.Dispose();
             }
         }
+
         public DataTable tbbaogia_SA_ID_HD_TonTai_False(int xid_hopdong_)
         {
             SqlCommand scmCmdToExecute = new SqlCommand();
@@ -418,6 +454,42 @@ namespace QuyetToanVCG_TDC_2021
             {
                 // some error occured. Bubble it to caller and encapsulate Exception object
                 throw new Exception("tbBangKe_SA_ID_HD_TonTai_False", ex);
+            }
+            finally
+            {
+                //Close connection.
+                m_scoMainConnection.Close();
+                scmCmdToExecute.Dispose();
+                sdaAdapter.Dispose();
+            }
+        }
+
+        public DataTable tbBaoGia_VPP_XangDau_SA_ID_HD(int xid_hopdong_)
+        {
+            SqlCommand scmCmdToExecute = new SqlCommand();
+            scmCmdToExecute.CommandText = "dbo.[tbBaoGia_VPP_XangDau_SA_ID_HD]";
+            scmCmdToExecute.CommandType = CommandType.StoredProcedure;
+            DataTable dtToReturn = new DataTable("tbBaoGia_VPP_XangDau_SA_ID_HD");
+            SqlDataAdapter sdaAdapter = new SqlDataAdapter(scmCmdToExecute);
+
+            // Use base class' connection object
+            scmCmdToExecute.Connection = m_scoMainConnection;
+
+            try
+            {
+                m_scoMainConnection.Open();
+
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_batdau", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_batdau));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@ngay_ketthuc", SqlDbType.SmallDateTime, 3, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, ngay_ketthuc));
+                scmCmdToExecute.Parameters.Add(new SqlParameter("@_id_hopdong", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, xid_hopdong_));
+                //scmCmdToExecute.Parameters.Add(new SqlParameter("@SoDong", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, sodong_));
+                sdaAdapter.Fill(dtToReturn);
+                return dtToReturn;
+            }
+            catch (Exception ex)
+            {
+                // some error occured. Bubble it to caller and encapsulate Exception object
+                throw new Exception("tbBaoGia_VPP_XangDau_SA_ID_HD", ex);
             }
             finally
             {

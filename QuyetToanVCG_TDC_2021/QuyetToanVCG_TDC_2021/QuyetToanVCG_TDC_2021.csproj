@@ -156,6 +156,7 @@
     <Compile Include="clsTbchucdanh.cs" />
     <Compile Include="clsTbchucvu.cs" />
     <Compile Include="clsTbdonvi.cs" />
+    <Compile Include="clsTbDuToan_ben_Cuc.cs" />
     <Compile Include="clsTbHoiThao.cs" />
     <Compile Include="clsTbhopdong.cs" />
     <Compile Include="clsTbloaihoadon.cs" />

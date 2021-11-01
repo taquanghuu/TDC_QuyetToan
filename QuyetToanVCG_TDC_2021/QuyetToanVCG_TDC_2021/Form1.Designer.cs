@@ -270,7 +270,7 @@
             // 
             // clGhiChu
             // 
-            this.clGhiChu.Caption = "Ghi chú";
+            this.clGhiChu.Caption = "Địa điểm thực hiện";
             this.clGhiChu.ColumnEdit = this.repositoryItemMemoEdit2;
             this.clGhiChu.FieldName = "GhiChu";
             this.clGhiChu.Name = "clGhiChu";
